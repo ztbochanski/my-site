@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PageLayout from "./PageLayout.astro";
+import { formatDate } from "../helpers";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate } = Astro.props;
+---
+
+<PageLayout title={title} description={description}>
+  <main>
+    <article>
+      <div class="">
+        <div class="title">
+          <div class="date">
+            {pubDate}
+          </div>
+          <h1>{title}</h1>
+          <hr />
+        </div>
+        <slot />
+      </div>
+    </article>
+  </main>
+</PageLayout>
