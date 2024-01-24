@@ -1,5 +1,27 @@
 # my-site
 
+This document outlines clear steps for efficiently building a small project
+
+### Phase 0: Conceptualize and Design
+- Create a picture of the endstate
+- Break down the picture into components and steps
+
+### Phase 1: Structure - Create a static site using a package like Astro. (HTML Only)
+- Create index page
+- Create dynamic blog page
+- Set up markdown (mdx) content for blog page
+- Configure helper code or modules for SEO, markdown rendering, processing tasks, etc.
+
+### Phase 2: Design - Add styling and animations
+- Add CSS
+- Add animations
+- Add D3 visualizations
+- Add interactive elements
+  
+### Phase 3: Content - Add mdx and components
+- Add blog pages
+- Add informative components
+  
 ## 🚀 Project Structure
 
 ```text
@@ -17,7 +39,8 @@
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-## Stack
+
+## Tool Stack
 
 - [Astro](https://astro.build)
 - [Vite](https://vitejs.dev/)
@@ -38,5 +61,4 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 ## Credit
 
-Check out [Astro documentation](https://docs.astro.build)
-Started from astro theme based off [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Check out [Astro documentation](https://docs.astro.build) that helped guide this build; also check [Bear Blog](https://github.com/HermanMartinus/bearblog/) which referenced used by [astro](https://docs.astro.build) to inspire the starter template.
