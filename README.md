@@ -8,7 +8,8 @@
 │   ├── components/
 │   ├── content/
 │   ├── layouts/
-│   └── pages/
+│   ├── pages/
+│   └── styles/
 ├── astro.config.mjs
 ├── README.md
 ├── package.json
