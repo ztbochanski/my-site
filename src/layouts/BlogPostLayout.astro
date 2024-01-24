@@ -1,22 +1,27 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { MDXLayoutProps } from "astro";
 import PageLayout from "./PageLayout.astro";
-import { formatDate } from "../helpers";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = MDXLayoutProps<{
+  title: string;
+  description: string;
+  pubDate: string;
+  minutesRead: string;
+}>;
 
-const { title, description, pubDate } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<PageLayout title={title} description={description}>
+<PageLayout title={frontmatter.title} description={frontmatter.description}>
   <main>
     <article>
       <div class="">
         <div class="title">
           <div class="date">
-            {pubDate}
+            {frontmatter.pubDate}
           </div>
-          <h1>{title}</h1>
+          <h1>{frontmatter.title}</h1>
+          <p>{frontmatter.minutesRead}</p>
           <hr />
         </div>
         <slot />
