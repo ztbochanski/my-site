@@ -1,0 +1,42 @@
+---
+import Card from "./Card/index.astro";
+import { LINKS } from "../consts";
+import Pulse from "./Pulse.astro";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
+  <div class="h-full">
+    <div class="relative">
+      <div class="absolute left-20 mt-2">
+        <div class="flex items-end justify-end">
+          <Pulse />
+        </div>
+      </div>
+      <header class="flex items-center">
+        <h1 class="text-xl font-bold">Contact</h1>
+      </header>
+    </div>
+
+    <div class="flex flex-col mt-4 w-fit">
+      <h2 class="text-gray-500">Socials</h2>
+      <ul>
+        <li>
+          <a href={LINKS.linkedin} target="_blank">Linkedin</a>
+        </li>
+        <li>
+          <a href={LINKS.github} target="_blank">Github</a>
+        </li>
+        <li>
+          <a href={LINKS.discord} target="_blank">Discord</a>
+        </li>
+      </ul>
+    </div>
+    <div class="flex flex-col mt-4">
+      <h2 class="text-gray-500">Details</h2>
+      <address class="flex flex-col">
+        <p>Oregon</p>
+        <p>USA</p>
+      </address>
+    </div>
+  </div>
+</Card>
