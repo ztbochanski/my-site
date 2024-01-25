@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  date: Date;
+  url: string;
+}
+
+const { title, date, url } = Astro.props;
+---
+
+<li
+  class="w-full ease-in-out transition-colors border-b border-dashed border-b-2 my-2"
+>
+  <a class="text-sm decoration-none flex justify-between" href={`/blog/${url}`}>
+    <p class="inline-block whitespace-nowrap">
+      {title}
+    </p>
+    <time
+      class="text-right tabular-nums"
+      datetime={date.toISOString()}
+      data-date={date.toISOString()}
+    >
+      {date}
+    </time>
+  </a>
+</li>
