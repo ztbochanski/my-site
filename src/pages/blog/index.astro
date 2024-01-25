@@ -1,5 +1,5 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
+import AnimationLayout from "../../layouts/AnimationLayout.astro";
 import { BLOG_TITLE, BLOG_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 
@@ -8,7 +8,16 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<PageLayout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
+<script>
+  import { timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../../consts";
+
+  const sequence = [loaderAnimation];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<AnimationLayout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
   <main>
     <a href="/">Back</a>
     <section>
@@ -26,4 +35,4 @@ const posts = (await getCollection("blog")).sort(
       </ul>
     </section>
   </main>
-</PageLayout>
+</AnimationLayout>
