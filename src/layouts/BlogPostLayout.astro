@@ -1,6 +1,7 @@
 ---
 import type { MDXLayoutProps } from "astro";
 import HeadLayout from "./HeadLayout.astro";
+import Prose from "../components/Prose.astro";
 
 type Props = MDXLayoutProps<{
   title: string;
@@ -24,7 +25,9 @@ const { frontmatter } = Astro.props;
           <p>{frontmatter.minutesRead}</p>
           <hr />
         </div>
-        <slot />
+        <Prose>
+          <slot />
+        </Prose>
       </div>
     </article>
   </main>
