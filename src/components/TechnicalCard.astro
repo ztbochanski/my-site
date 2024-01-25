@@ -1,0 +1,46 @@
+---
+import Card from "./Card/index.astro";
+
+const title = "Technical 🔗";
+
+const projects = [
+  {
+    name: "Dashboard",
+    link: "",
+  },
+  {
+    name: "Model",
+    link: "",
+  },
+  {
+    name: "API",
+    link: "",
+  },
+  {
+    name: "Database",
+    link: "",
+  },
+  {
+    name: "Deployment",
+    link: "",
+  },
+];
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4" title={title}>
+  <section class="mt-4">
+    <div class="flex flex-col w-fit">
+      <ul>
+        {
+          projects.map((project) => (
+            <li>
+              <a class="link link-hover" href={project.link} target="_blank">
+                {project.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Card>
