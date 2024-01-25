@@ -1,5 +1,8 @@
 ---
 import AnimationLayout from "../layouts/AnimationLayout.astro";
+import Card from "../components/Card/index.astro";
+import WelcomeCard from "../components/WelcomeCard.astro";
+import OverviewCard from "../components/OverviewCard.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -27,8 +30,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </script>
 
 <AnimationLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main class="">
-    <h1>landing page content and components go here</h1>
-    <a href="/blog">blog page</a>
+  <main
+    class="m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-4 md:gap-3 md:p-6 lg:h-screen lg:grid-rows-8 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+  >
+    <WelcomeCard />
+    <OverviewCard />
+    <Card
+      colSpan="md:col-span-1"
+      rowSpan="md:row-span-1"
+      title="Blog"
+      href="/blog"
+    >
+      <p class="text-sm">Rust... and data science</p>
+    </Card>
   </main>
 </AnimationLayout>
