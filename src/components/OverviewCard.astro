@@ -1,0 +1,68 @@
+---
+import Card from "./Card/index.astro";
+
+const skills = [
+  "Cloud Apps",
+  "Web",
+  "ML Infra",
+  "Test-Driven Dev",
+  "Algorithm Analysis",
+  "Mobile",
+  "RESTful APIs",
+  "CNNs/RNNs",
+  "Parallel Performance",
+];
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-6">
+  <div class="flex flex-col h-full">
+    <h6 class="text-sm font-light m-0">overview</h6>
+
+    <div>
+      <p class="text-sm font-light m-0">
+        <ul class="text-sm font-light list-none">
+          <li class="mb-2 flex">
+            <span class="mr-2">👌</span>
+            Encourage team and individual autonomy
+          </li>
+          <li class="mb-2 flex">
+            <span class="mr-2">👉</span>Communicate directly, often
+          </li>
+          <li class="mb-2 flex">
+            <span class="mr-2">✌️</span>Strive for open mindedness and humility
+          </li>
+          <li class="mb-2 flex">
+            <span class="mr-2">🎓</span>
+            BSc. Computer Science - Oregon State University
+          </li>
+          <li class="flex">
+            <span class="mr-2">🌱</span>
+            R&D Software Team
+            <a
+              href="https://www.plenty.ag/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-info ml-2"
+            >
+              @Plenty.ag
+            </a>
+          </li>
+        </ul>
+      </p>
+    </div>
+    <div class="mt-2">
+      <h6 class="text-sm font-light mt-2">skills🚀</h6>
+      <p class="text-sm font-light mt-2">
+        <ul class="text-sm font-light list-none">
+          {
+            skills.map((skill) => (
+              <li class="inline-block text-sm">
+                <span class="badge badge-ghost m-1 p-1">{skill}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </p>
+    </div>
+  </div>
+</Card>
