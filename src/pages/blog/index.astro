@@ -2,6 +2,7 @@
 import AnimationLayout from "../../layouts/AnimationLayout.astro";
 import { BLOG_TITLE, BLOG_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import PostRow from "../../components/PostRow.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -18,18 +19,20 @@ const posts = (await getCollection("blog")).sort(
 </script>
 
 <AnimationLayout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
-  <main>
-    <a href="/">Back</a>
+  <main
+    class="w-screen h-screen flex flex-col justify-start items-start max-w-3xl mx-auto p-8"
+  >
+    <a href="/" class="btn btn-outline btn-primary px-4 py-2 mb-8">Back</a>
     <section>
-      <ul>
+      <h1 class="text-4xl font-bold mb-4">Posts</h1>
+      <ul class="w-full">
         {
           posts.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}/`}>
-                <h4 class="title">{post.data.title}</h4>
-                <p class="date">{post.data.pubDate}</p>
-              </a>
-            </li>
+            <PostRow
+              title={post.data.title}
+              date={post.data.pubDate}
+              url={post.slug}
+            />
           ))
         }
       </ul>
