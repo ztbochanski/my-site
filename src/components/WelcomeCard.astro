@@ -20,22 +20,28 @@ const currentYear = new Date().getFullYear();
       </div>
       <div class="flex gap-4">
         <a href={LINKS.github} aria-label="github profile" target="_blank">
-          <Button aria-label="github profile">
-            <Icon name="ri:github-line" class="h-6" />
-            <span class="sr-only">GitHub Profile</span>
-          </Button>
+          <div class="tooltip" data-tip="GitHub">
+            <Button aria-label="github profile">
+              <Icon name="ri:github-line" class="h-6" />
+              <span class="sr-only">GitHub Profile</span>
+            </Button>
+          </div>
         </a>
         <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
-          <Button aria-label="linkedin profile">
-            <Icon name="ri:linkedin-box-line" class="h-6" />
-            <span class="sr-only">Linkedin Profile</span>
-          </Button>
+          <div class="tooltip" data-tip="LinkedIn">
+            <Button aria-label="linkedin profile">
+              <Icon name="ri:linkedin-box-line" class="h-6" />
+              <span class="sr-only">Linkedin Profile</span>
+            </Button>
+          </div>
         </a>
         <a href={LINKS.discord} aria-label="discord" target="_blank">
-          <Button aria-label="discord">
-            <Icon name="ri:discord-line" class="h-6" />
-            <span class="sr-only">Discord</span>
-          </Button>
+          <div class="tooltip" data-tip="Discord">
+            <Button aria-label="discord">
+              <Icon name="ri:discord-line" class="h-6" />
+              <span class="sr-only">Discord</span>
+            </Button>
+          </div>
         </a>
       </div>
     </div>
