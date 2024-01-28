@@ -1,33 +1,21 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { Icon } from "astro-icon/components";
 ---
 
 <header>
   <nav class="navbar p-0 pt-2 px-2 m-auto min-h-0 max-w-6xl overflow-hidden">
     <div class="flex-1">
       <ul class="menu p-0 menu-horizontal px-1">
-        <li><a class="" href="/">Home</a></li>
+        <li>
+          <a class="" href="/">Home</a>
+        </li>
         <li><a class="" href="/blog">Blog</a></li>
       </ul>
     </div>
     <div class="flex-none">
       <ul class="menu p-0 menu-horizontal bg-base-200 rounded-box">
         <li>
-          <a class="tooltip" data-tip="Home">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-              ></path></svg
-            >
-          </a>
+          <Icon name="line-md:discord" />
         </li>
         <li>
           <a class="tooltip" data-tip="Details">
