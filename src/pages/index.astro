@@ -2,9 +2,9 @@
 import AboutCard from "../components/AboutCard.astro";
 import AnimationLayout from "../layouts/AnimationLayout.astro";
 import Card from "../components/Card/index.astro";
-import ContactCard from "../components/ContactCard.astro";
 import OverviewCard from "../components/OverviewCard.astro";
 import WelcomeCard from "../components/WelcomeCard.astro";
+import SkillsCard from "../components/SkillsCard.astro";
 import TechnicalCard from "../components/TechnicalCard.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
@@ -34,11 +34,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 <AnimationLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main
-    class="mx-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+    class="mx-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-4 md:gap-3 md:p-6 lg:h-screen lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
   >
     <WelcomeCard />
     <OverviewCard />
-    <ContactCard />
+    <SkillsCard />
     <AboutCard />
     <TechnicalCard />
     <Card
