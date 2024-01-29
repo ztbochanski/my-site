@@ -44,9 +44,10 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 
 - [Astro](https://astro.build)
 - [Vite](https://vitejs.dev/)
-- [tailwindcss](https://tailwindcss.com/docs)
-- [motion](https://motion.dev/)
-- [d3](https://d3js.org/)
+- [Tailwindcss](https://tailwindcss.com/docs)
+- [Motion](https://motion.dev/)
+- [mdx](https://mdxjs.com/)
+- [iconify](https://iconify.design/)
 
 ## 🧞 Commands
 
