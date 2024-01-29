@@ -1,10 +1,16 @@
 ---
 import Card from "./Card/index.astro";
+import { Icon } from "astro-icon/components";
 import { LINKS } from "../consts";
 ---
 
-<Card colSpan="md:col-span-1" rowSpan="md:row-span-4" title="About 👨‍🔧">
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <div class="h-full">
+    <header class="flex items-center">
+      <h1 class="text-xl font-semibold flex">
+        About<Icon name="noto:mechanic" class="w-6 h-6 ml-2" />
+      </h1>
+    </header>
     <section class="mt-4">
       <h2 class="text-gray-500">Favorite Languages</h2>
       <div class="grid grid-cols-2 gap-4">
