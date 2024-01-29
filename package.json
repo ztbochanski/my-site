@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "@iconify-json/line-md": "^1.1.33",
+    "@iconify-json/noto": "^1.1.18",
     "astro": "^4.2.4",
     "astro-icon": "^1.0.2",
     "mdast-util-to-string": "^4.0.0",
