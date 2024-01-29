@@ -8,17 +8,17 @@ const currentYear = new Date().getFullYear();
 
 <Card colSpan="md:col-span-3" rowSpan="md:row-span-4">
   <div class="flex w-full h-full">
-    <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
+    <div class="flex flex-col justify-between md:max-h-[400px] gap-4">
       <div class="flex flex-col h-full">
         <h6 class="text-sm font-light m-0">welcome</h6>
-        <p class="m-0 font-light text-xl">
+        <p class="m-0 font-light md:text-base lg:text-xl">
           Hi, I'm <b class="font-bold">Zach</b>, a software engineer. I am
-          passionate about crafting impactful data stories, mastering proven
-          design patterns, and creating visually appealing designs. My
-          professional interests encompass systems programming and data science.
+          passionate about crafting impactful data stories, parallelizing
+          problems, and creating visually appealing designs. My professional
+          interests encompass systems programming and data science.
         </p>
       </div>
-      <div class="flex gap-4">
+      <div class="flex gap-4 p-2">
         <a href={LINKS.github} aria-label="github profile" target="_blank">
           <div class="tooltip" data-tip="GitHub">
             <Button aria-label="github profile">
@@ -56,9 +56,10 @@ const currentYear = new Date().getFullYear();
   <div class="flex items-end justify-end">
     <p class="text-xs inline-flex">
       © {currentYear} · Crafted with <Icon
-        name="line-md:heart-filled"
+        name="noto:black-heart"
         class="h-4 text-error ml-1"
       />
+      <Icon name="noto:sign-of-the-horns" class="h-4 text-error ml-1" />
       <span class="sr-only">Love</span>
     </p>
   </div>
