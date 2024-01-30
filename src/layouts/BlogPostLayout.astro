@@ -1,5 +1,6 @@
 ---
 import type { MDXLayoutProps } from "astro";
+import Header from "../components/Header.astro";
 import HeadLayout from "./HeadLayout.astro";
 import Prose from "../components/Prose.astro";
 
@@ -14,17 +15,26 @@ const { frontmatter } = Astro.props;
 ---
 
 <HeadLayout title={frontmatter.title} description={frontmatter.description}>
+  <Header />
   <main>
-    <article>
-      <div class="">
-        <div class="title">
-          <div class="date">
-            {frontmatter.pubDate}
-          </div>
-          <h1>{frontmatter.title}</h1>
-          <p>{frontmatter.minutesRead}</p>
-          <hr />
-        </div>
+    <article class="pb-6">
+      <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
+      <div class="flex fllex-col">
+        <p class="text-info font-light text-sm flex-1">
+          {frontmatter.minutesRead}
+        </p>
+        <time class="text-info font-light text-sm">
+          {
+            new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+      </div>
+      <hr />
+      <div class="pt-6">
         <Prose>
           <slot />
         </Prose>
