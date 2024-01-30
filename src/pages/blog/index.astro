@@ -21,9 +21,7 @@ const posts = (await getCollection("blog")).sort(
 
 <AnimationLayout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
   <Header />
-  <main
-    class="w-screen h-screen flex flex-col justify-start items-start max-w-3xl mx-auto p-8 pt-4"
-  >
+  <main class="w-screen h-screen flex flex-col max-w-3xl mx-auto p-8 pt-4">
     <section>
       <h1 class="text-4xl font-bold mb-4">Posts</h1>
       <ul class="w-full">
