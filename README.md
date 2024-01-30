@@ -1,6 +1,6 @@
 # my-site
 
-[My Site](zachsblog.netlify.app)
+[zachsblog.netlify.app](https://zachsblog.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca5b8b51-f7ed-4b2b-9a7b-5492256692ad/deploy-status)](https://app.netlify.com/sites/zachsblog/deploys)
 
