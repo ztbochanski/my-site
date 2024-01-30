@@ -6,13 +6,18 @@ interface Props {
 }
 
 const { title, date, url } = Astro.props;
+const localDate = date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
 ---
 
 <li
   class="w-full ease-in-out transition-colors border-b border-dashed border-b-2 my-2"
 >
-  <a class="text-sm decoration-none flex justify-between" href={`/blog/${url}`}>
-    <p class="inline-block whitespace-nowrap">
+  <a class="text-sm flex justify-between" href={`/blog/${url}`}>
+    <p class="inline-block whitespace-nowrap flex-1">
       {title}
     </p>
     <time
@@ -20,7 +25,7 @@ const { title, date, url } = Astro.props;
       datetime={date.toISOString()}
       data-date={date.toISOString()}
     >
-      {date}
+      {localDate}
     </time>
   </a>
 </li>
