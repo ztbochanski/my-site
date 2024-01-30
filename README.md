@@ -51,7 +51,9 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 - [Tailwindcss](https://tailwindcss.com/docs)
 - [Motion](https://motion.dev/)
 - [mdx](https://mdxjs.com/)
-- [iconify](https://iconify.design/)
+- [iconify logos](https://icon-sets.iconify.design/logos/)
+- [iconify line-md](https://icon-sets.iconify.design/line-md/)
+- [iconify noto emojis](https://icon-sets.iconify.design/noto/)
 
 ## 🧞 Commands
 
