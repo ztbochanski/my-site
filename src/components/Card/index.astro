@@ -9,13 +9,15 @@ interface Props {
   rowSpan?: string;
   href?: string;
   colorText?: string;
+  hoverShadowSize?: string;
 }
 
-const { title, body, colSpan, rowSpan, href, colorText } = Astro.props;
+const { title, body, colSpan, rowSpan, href, colorText, hoverShadowSize } =
+  Astro.props;
 ---
 
 <div
-  class={`card group overflow-hidden transfor-y-[-40%] shadow-lg rounded-lg p-6 border border-neutral hover:border-primary align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto ${
+  class={`card group overflow-hidden transfor-y-[-40%] shadow-lg hover:shadow-${hoverShadowSize} p-6 border border-gray-200 hover:border-gray-300 align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto ${
     colSpan || "md:col-span-2"
   } ${rowSpan || ""}`}
 >
@@ -24,7 +26,7 @@ const { title, body, colSpan, rowSpan, href, colorText } = Astro.props;
       <a href={href} class={`h-full w-full ${colorText || " "}`}>
         <Icon
           name="line-md:arrow-right"
-          class="h-6 float-right group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out duration-100 z-20"
+          class="h-6 float-right group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out duration-100 z-20"
         />
         <Content title={title} body={body}>
           <slot />
