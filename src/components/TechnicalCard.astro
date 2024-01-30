@@ -1,36 +1,51 @@
 ---
 import Card from "./Card/index.astro";
 import { Icon } from "astro-icon/components";
-import { LINKS } from "../consts";
+
+const logos = [
+  "logos:rust",
+  "logos:python",
+  "logos:intel",
+  "logos:linux-tux",
+  "logos:tensorflow",
+  "logos:ruby",
+  "logos:java",
+  "logos:pytorch-icon",
+  "logos:dart",
+  "logos:pandas-icon",
+];
+
+const getLabel = (str: string): string => {
+  const colonIndex = str.indexOf(":");
+  if (colonIndex !== -1) {
+    let word = str.substring(colonIndex + 1);
+    const dashIndex = word.indexOf("-");
+    if (dashIndex !== -1) {
+      word = word.substring(0, dashIndex);
+    }
+    return word;
+  }
+  return str;
+};
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <div class="h-full">
     <header class="flex items-center">
       <h1 class="text-xl font-semibold flex">
-        About<Icon name="noto:mechanic" class="w-6 h-6 ml-2" />
+        Technical<Icon name="noto:mechanic" class="w-6 h-6 ml-2" />
       </h1>
     </header>
     <section class="mt-4">
-      <h2 class="text-gray-500">Favorite Languages</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <ul class="">
-          <li>Rust</li>
-        </ul>
-        <ul class="">
-          <li>
-            <a href={LINKS.rickroll} target="_blank" class="text-info">x86</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="mt-4">
-      <div class="flex flex-col">
-        <h2 class="text-gray-500">Interests</h2>
-        <p class="text-xl">🖤❄️👨‍🏭✈️</p>
-        <p class="mt-2">English (Fluent) · Norwegian (B2) 🇳🇴</p>
-      </div>
+      <ul class="flex flex-wrap gap-2">
+        {
+          logos.map((logo) => (
+            <li class="flex btn btn-square tooltip" data-tip={getLabel(logo)}>
+              <Icon name={logo} class="w-8 h-8" />
+            </li>
+          ))
+        }
+      </ul>
     </section>
   </div>
 </Card>
