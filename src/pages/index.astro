@@ -37,7 +37,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <div class="md:h-screen flex flex-col justify-center items-center">
     <Header />
     <main
-      class="mx-auto grid gap-2 max-w-6xl overflow-hidden relative w-full sm:px-4 sm:pb-4 sm:gap-2 md:grid-cols-4 md:gap-3 md:px-6 md:pb-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+      class="mx-auto grid px-4 pb-4 gap-2 max-w-6xl overflow-hidden relative w-full md:grid-cols-4 md:gap-3 md:px-6 md:pb-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
     >
       <WelcomeCard />
       <OverviewCard />
@@ -49,6 +49,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         rowSpan="md:row-span-1"
         title="Blog"
         href="/blog"
+        hoverShadowSize="xl"
       >
         <p class="text-sm text-neutral-500">Rust... and data science</p>
       </Card>
@@ -57,6 +58,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         rowSpan="md:row-span-1"
         title="Contributions"
         href="/blog"
+        hoverShadowSize="xl"
       >
         <p class="text-sm text-neutral-500">Open Source</p>
       </Card>
