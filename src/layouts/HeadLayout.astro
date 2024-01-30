@@ -15,7 +15,15 @@ const { title, description } = Astro.props;
     <script is:inline>
       // prevent flash of inacurate color user theme preference
       if (localStorage.getItem("theme") === null) {
-        document.documentElement.setAttribute("data-theme", "light");
+        document.documentElement.setAttribute("data-theme", "nord");
+
+        document.addEventListener("DOMContentLoaded", function () {
+          var inputElement = document.querySelector('input[value="nord"]');
+          console.log(inputElement);
+          if (inputElement) {
+            inputElement.classList.add("btn-primary");
+          }
+        });
       } else
         document.documentElement.setAttribute(
           "data-theme",
