@@ -1,15 +1,13 @@
 ---
 interface Props {
-  rounded?: boolean;
+  brandColor?: string;
 }
 
-const { rounded } = Astro.props;
+const { brandColor } = Astro.props;
 ---
 
 <button
-  class={`button text-xl max-h-[50px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] px-5 py-2 border border-neutral hover:text-primary hover:border-primary transition-colors duration-100 ease-in-out ${
-    rounded ? "rounded-full" : "rounded-lg"
-  }`}
+  class={`btn btn-outline btn-${brandColor} text-xl max-h-[50px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] px-5 py-2 ease-in-out`}
 >
   <slot />
 </button>
