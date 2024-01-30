@@ -10,16 +10,25 @@ interface Props {
   href?: string;
   colorText?: string;
   hoverShadowSize?: string;
+  className?: string;
 }
 
-const { title, body, colSpan, rowSpan, href, colorText, hoverShadowSize } =
-  Astro.props;
+const {
+  title,
+  body,
+  colSpan,
+  rowSpan,
+  href,
+  colorText,
+  hoverShadowSize,
+  className,
+} = Astro.props;
 ---
 
 <div
-  class={`card group overflow-hidden transfor-y-[-40%] shadow-lg hover:shadow-${hoverShadowSize} p-6 border border-gray-200 hover:border-gray-300 align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto ${
+  class={`card group overflow-hidden transfor-y-[-40%] shadow-lg hover:shadow-${hoverShadowSize} p-6 align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto ${
     colSpan || "md:col-span-2"
-  } ${rowSpan || ""}`}
+  } ${rowSpan || ""} ${className || "border border-neutral"} `}
 >
   {
     href ? (
