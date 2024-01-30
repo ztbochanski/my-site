@@ -1,5 +1,6 @@
 ---
 import Card from "./Card/index.astro";
+import Pulse from "./Pulse.astro";
 import { Icon } from "astro-icon/components";
 const projects = [
   {
@@ -27,17 +28,27 @@ const projects = [
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <header class="flex items-center">
-    <h1 class="text-xl font-semibold flex">
-      Projects<Icon name="noto:link" class="w-6 h-6 ml-2" />
+    <h1 class="text-xl font-semibold flex items-center justify-center">
+      Projects
+      <div class="p-1 m-1">
+        <Pulse />
+      </div>
     </h1>
   </header>
-  <section class="mt-4">
+  <section class="mt-2">
     <div class="flex flex-col w-fit h-full">
-      <ul>
+      <ul class="list-none font-light">
         {
           projects.map((project) => (
             <li>
-              <a class="link link-hover" href={project.link} target="_blank">
+              <a
+                class="mb-2 flex link link-hover"
+                href={project.link}
+                target="_blank"
+              >
+                <span class="mr-2 mt-1">
+                  <Icon name="noto:link" class="w-4 h-4" />
+                </span>
                 {project.name}
               </a>
             </li>
