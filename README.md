@@ -1,8 +1,10 @@
-# my-site
+# my-site 
 
-[zachsblog.netlify.app](https://zachsblog.netlify.app/)
+Deployed to Netlify: [zachsblog.netlify.app](https://zachsblog.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca5b8b51-f7ed-4b2b-9a7b-5492256692ad/deploy-status)](https://app.netlify.com/sites/zachsblog/deploys)
+
+## 👀 Overview
 
 This document outlines clear steps for efficiently building a small project
 
@@ -19,7 +21,6 @@ This document outlines clear steps for efficiently building a small project
 ### Phase 2: Design - Add styling and animations
 - Add CSS
 - Add animations
-- Add D3 visualizations
 - Add interactive elements
   
 ### Phase 3: Content - Add mdx and components
@@ -43,6 +44,16 @@ This document outlines clear steps for efficiently building a small project
 ```
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+## Development
+
+### 🛠️ Making a change
+
+Keep your main branch clean by creating a new branch for each feature or bug fix you work on. Once you're ready to merge, squash your commits into a single commit and merge into main.
+
+For the purposes of this project, keep all feature development local.
+1. Create a new local branch `git checkout -b feature-name`
+2. Squash and merge into main `git checkout main && git merge --squash feature-name`
 
 ## Tool Stack
 

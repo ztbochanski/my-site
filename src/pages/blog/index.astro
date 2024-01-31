@@ -1,5 +1,6 @@
 ---
 import AnimationLayout from "../../layouts/AnimationLayout.astro";
+import Footer from "../../components/Footer.astro";
 import Header from "../../components/Header.astro";
 import PostRow from "../../components/PostRow.astro";
 import { BLOG_TITLE, BLOG_DESCRIPTION } from "../../consts";
@@ -37,4 +38,5 @@ const posts = (await getCollection("blog")).sort(
       </ul>
     </section>
   </main>
+  <Footer />
 </AnimationLayout>

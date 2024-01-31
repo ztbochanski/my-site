@@ -1,9 +1,13 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: 'About This Site'
-description: 'The concept of this site, bulding, and the components used.'
+description: 'The concept of this site, development, bulding, and the components used.'
 pubDate: 2024-01-30
 ---
+
+import Readme from '../../../README.md'
+
+<Readme />
 
 ## Components
 
@@ -11,7 +15,7 @@ Components are built in `.astro` files.
 This file type provides an easy way to write code that can get 
 exceuted on the server and prerendered before serving the page.
 
-### Component examples in this site -
+### Component examples in this site
 
 **Theme Switcher**
 <div class="flex justify-center items-center">
@@ -94,3 +98,5 @@ import PostRow from '../../components/PostRow.astro'
   url="/blog/fake-title"
 />
 </div>
+
+[Source Code](https://github.com/ztbochanski/my-site)

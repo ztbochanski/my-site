@@ -1,5 +1,6 @@
 ---
 import type { MDXLayoutProps } from "astro";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import HeadLayout from "./HeadLayout.astro";
 import Prose from "../components/Prose.astro";
@@ -16,8 +17,8 @@ const { frontmatter } = Astro.props;
 
 <HeadLayout title={frontmatter.title} description={frontmatter.description}>
   <Header />
-  <main>
-    <article class="pb-6">
+  <main class="flex flex-col max-w-3xl mx-auto p-8 pt-4">
+    <article class="pb-4">
       <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
       <div class="flex pt-2">
         <p class="text-info font-light text-sm flex-1">
@@ -41,4 +42,5 @@ const { frontmatter } = Astro.props;
       </div>
     </article>
   </main>
+  <Footer />
 </HeadLayout>

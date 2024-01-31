@@ -13,13 +13,18 @@ const currentYear = new Date().getFullYear();
         <h6 class="text-sm font-light m-0 text-neutral-500">welcome</h6>
         <p class="m-0 font-light lg:text-xl">
           Hi, I'm <b class="font-bold">Zach</b>, a software engineer. I am
-          passionate about crafting impactful data stories, parallelizing
-          problems, and creating visually appealing designs. My professional
-          interests encompass systems programming and data science.
+          passionate about solving problems, creating insight from data, and
+          crafting visually appealing designs. My professional interests
+          encompass systems programming and data science.
         </p>
       </div>
       <div class="flex gap-4 p-2">
-        <a href={LINKS.github} aria-label="github profile" target="_blank">
+        <a
+          href={LINKS.github}
+          aria-label="github profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="tooltip" data-tip="GitHub">
             <Button aria-label="github profile">
               <Icon name="line-md:github-loop" class="h-6" />
@@ -27,7 +32,12 @@ const currentYear = new Date().getFullYear();
             </Button>
           </div>
         </a>
-        <a href={LINKS.linkedin} aria-label="linkeding profile" target="_blank">
+        <a
+          href={LINKS.linkedin}
+          aria-label="linkeding profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="tooltip" data-tip="LinkedIn">
             <Button aria-label="linkedin profile">
               <Icon name="line-md:linkedin" class="h-6" />
@@ -35,7 +45,12 @@ const currentYear = new Date().getFullYear();
             </Button>
           </div>
         </a>
-        <a href={LINKS.discord} aria-label="discord" target="_blank">
+        <a
+          href={LINKS.discord}
+          aria-label="discord"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div class="tooltip" data-tip="Discord">
             <Button aria-label="discord">
               <Icon name="line-md:discord" class="h-6" />

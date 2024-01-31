@@ -1,5 +1,5 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
 
 <header>
@@ -7,17 +7,21 @@
     class="navbar flex flex-col sm:flex sm:flex-row p-2 sm:px-4 sm:pt-4 sm:pb-2 m-auto min-h-0 max-w-6xl overflow-hidden justify-center items-center"
   >
     <div>
-      <ul class="p-0 px-1 menu menu-horizontal join join-horizontal">
+      <ul class="p-2 join join-horizontal">
         <li>
-          <a class="join-item btn btn-sm btn-link" href="/">Home</a>
+          <a class="join-item btn btn-sm btn-ghost" href="/"
+            ><Icon name="noto:house" class="w-4 h-4" />Home</a
+          >
         </li>
         <li>
-          <a class="join-item btn btn-sm btn-link" href="/blog">Blog</a>
+          <a class="join-item btn btn-sm btn-ghost" href="/blog"
+            ><Icon name="noto:notebook" class="w-4 h-4" />Blog</a
+          >
         </li>
       </ul>
     </div>
     <div class="hidden sm:flex p-0 m-0 mr-4 divider divider-horizontal">·</div>
-    <div class="join join-horizontal">
+    <div class="join join-horizontal p-2">
       <input
         type="radio"
         name="theme-buttons"
