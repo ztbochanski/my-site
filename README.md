@@ -79,4 +79,4 @@ For the purposes of this project, keep all feature development local.
 
 ## Credit
 
-Check out [Astro documentation](https://docs.astro.build) that helped guide this build; also check [Bear Blog](https://github.com/HermanMartinus/bearblog/) which referenced used by [astro](https://docs.astro.build) to inspire the starter template.
+Check out [Astro documentation](https://docs.astro.build) that helped guide this build; also check [Bear Blog](https://github.com/HermanMartinus/bearblog/) referenced by [astro](https://docs.astro.build) to inspire the starter template.
