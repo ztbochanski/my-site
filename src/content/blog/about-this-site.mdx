@@ -3,13 +3,15 @@ layout: ../../layouts/BlogPostLayout.astro
 title: 'About This Site'
 description: 'The concept of this site, development, bulding, and the components used.'
 pubDate: 2024-01-30
+category: 'resources'
+source:
+  title: 'Astro Documentation'
+  url: 'https://docs.astro.build/en/install/auto/'
+tags: ['astro', 'react', 'tailwindcss', 'markdown', 'netlify', 
+'mdx', 'blog', 'site', 'components']
 ---
 
-import Readme from '../../../README.md'
-
-<Readme />
-
-## Components
+## Site Construction via Components
 
 Components are built in `.astro` files. 
 This file type provides an easy way to write code that can get 
@@ -100,3 +102,7 @@ import PostRow from '../../components/PostRow.astro'
 </div>
 
 [Source Code](https://github.com/ztbochanski/my-site)
+
+import Readme from '../../../README.md'
+
+<Readme />
