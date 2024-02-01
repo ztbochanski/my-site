@@ -10,6 +10,12 @@ type Props = MDXLayoutProps<{
   description: string;
   pubDate: string;
   minutesRead: string;
+  category: string;
+  source: {
+    title: string;
+    url: string;
+  };
+  tags: string[];
 }>;
 
 const { frontmatter } = Astro.props;
@@ -20,19 +26,57 @@ const { frontmatter } = Astro.props;
   <main class="flex flex-col max-w-3xl mx-auto p-8 pt-4">
     <article class="pb-4">
       <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
-      <div class="flex pt-2">
-        <p class="text-info font-light text-sm flex-1">
-          {frontmatter.minutesRead}
-        </p>
-        <time class="text-info font-light text-sm">
-          {
-            new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })
-          }
-        </time>
+      <div class="pt-2">
+        <div class="inline-flex join join-horizontal">
+          <div class="badge badge-neutral badge-lg join-item">
+            Topic - {
+              frontmatter.category &&
+                frontmatter.category
+                  .replace(/-/g, " ")
+                  .split(" ")
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(" ")
+            }
+          </div>
+          <div class="ml-2 badge badge-warning badge-lg join-item">
+            <a href={frontmatter.source.url} class="">
+              Source - {frontmatter.source.title}
+            </a>
+          </div>
+        </div>
+
+        <div class="card card-compact flex my-6">
+          <div class="card-body">
+            <ul class="list-none">
+              {
+                frontmatter.tags.map((tag) => (
+                  <li class="inline-block">
+                    <a href="">
+                      <span class="m-1 badge badge-lg badge-ghost transition-transform hover:shadow-lg hover:scale-110">
+                        #{tag}
+                      </span>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex pt-2">
+          <p class="text-info font-light text-sm flex-1">
+            {frontmatter.minutesRead}
+          </p>
+          <time class="text-info font-light text-sm">
+            {
+              new Date(frontmatter.pubDate).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </time>
+        </div>
       </div>
       <hr />
       <div class="pt-6">
