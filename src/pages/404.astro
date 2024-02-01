@@ -1,0 +1,56 @@
+---
+import AnimationLayout from "../layouts/AnimationLayout.astro";
+import { Icon } from "astro-icon/components";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<script>
+  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../consts";
+  const cards = document.querySelectorAll(".card");
+
+  const sequence = [
+    loaderAnimation,
+    [
+      cards,
+      { y: ["40%", "0%"], opacity: [0, 1] },
+      {
+        at: "-0.1",
+        duration: 0.4,
+        delay: stagger(0.3),
+        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+      },
+    ],
+  ];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<AnimationLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <Header />
+  <main class="hero bg-base-200 w-screen min-h-screen">
+    <div class="hero-content text-center block">
+      <div class="">
+        <Icon name="noto:broken-heart" class="w-56 h-56 m-auto" />
+      </div>
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold p-2">Hello there</h1>
+        <div class="flex">
+          <h2 class="text-xl font-bold p-2">
+            Something seems to be missing...
+          </h2>
+          <Icon name="noto:disappointed-face" class="w-8 h-8 ml-2" />
+        </div>
+        <a
+          href="https://github.com/sdmg15/Best-websites-a-programmer-should-visit#when-you-get-stuck"
+          rel="noopener noreferrer"
+          ><div class="btn btn-primary m-4">GTFO🔥</div></a
+        >
+      </div>
+    </div>
+  </main>
+  <Footer />
+</AnimationLayout>
