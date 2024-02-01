@@ -6,8 +6,8 @@ interface Props {
 const { brandColor } = Astro.props;
 ---
 
-<button
+<div
   class={`btn btn-outline btn-${brandColor} text-xl max-h-[50px] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] px-5 py-2 ease-in-out`}
 >
   <slot />
-</button>
+</div>

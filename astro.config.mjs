@@ -11,5 +11,5 @@ export default defineConfig({
   site: 'https://zachsblog.netlify.app',
   integrations: [mdx({
     remarkPlugins: [remarkReadingTime]
-  }), sitemap(), tailwind(), icon()]
+  }), sitemap(), tailwind(), icon()],
 });
