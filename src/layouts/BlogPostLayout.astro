@@ -28,7 +28,7 @@ const { frontmatter } = Astro.props;
       <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
       <div class="pt-2">
         <div class="inline-flex join join-horizontal">
-          <div class="badge badge-neutral badge-lg join-item">
+          <div class="badge badge-neutral badge-lg join-item h-min">
             Topic - {
               frontmatter.category &&
                 frontmatter.category
@@ -38,7 +38,7 @@ const { frontmatter } = Astro.props;
                   .join(" ")
             }
           </div>
-          <div class="ml-2 badge badge-warning badge-lg join-item">
+          <div class="ml-2 badge badge-warning badge-lg join-item h-min">
             <a href={frontmatter.source.url} class="">
               Source - {frontmatter.source.title}
             </a>
