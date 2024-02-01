@@ -1,0 +1,27 @@
+{
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-US",
+  "short_name": "Zach's Blog",
+  "name": "Zach - Software Engineer",
+  "start_url": "https://zachsblog.netlify.app/",
+  "scope": "/",
+  "description": "Software engineering portfolio and blog"
+}
