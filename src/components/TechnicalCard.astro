@@ -38,7 +38,8 @@ const getLabel = (str: string): string => {
     if (dashIndex !== -1) {
       word = word.substring(0, dashIndex);
     }
-    return word;
+
+    return word.charAt(0).toUpperCase() + word.slice(1);
   }
   return str;
 };
