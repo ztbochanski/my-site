@@ -19,7 +19,6 @@
     "@iconify-json/noto": "^1.1.18",
     "@iconify-json/simple-icons": "^1.1.90",
     "astro": "^4.2.4",
-    "astro-compress": "^2.2.8",
     "astro-icon": "^1.0.2",
     "mdast-util-to-string": "^4.0.0",
     "motion": "^10.17.0",
