@@ -3,6 +3,10 @@ import Card from "./Card/index.astro";
 import Button from "./Button.astro";
 import { LINKS } from "../consts";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import avatarImage from "../assets/avatar-frame-close.png";
+
 const currentYear = new Date().getFullYear();
 ---
 
@@ -60,12 +64,14 @@ const currentYear = new Date().getFullYear();
         </a>
       </div>
     </div>
-    <img
-      width="300"
+    <Image
+      src={avatarImage}
       height="300"
-      src="/avatar-frame-close-300x300.webp"
-      class="w-auto max-h-[300px] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-85 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
+      width="300"
       alt="avatar of zach"
+      decoding="async"
+      loading="lazy"
+      class="select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-85 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
     />
   </div>
   <div class="flex items-end justify-end">
