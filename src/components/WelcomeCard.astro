@@ -66,8 +66,9 @@ const currentYear = new Date().getFullYear();
     </div>
     <Image
       src={avatarImage}
-      height="300"
-      width="300"
+      height={300}
+      width={300}
+      densities={[0.5, 1.5, 2]}
       alt="avatar of zach"
       decoding="async"
       loading="lazy"
