@@ -38,7 +38,9 @@ const { frontmatter } = Astro.props;
                   .join(" ")
             }
           </div>
-          <div class="ml-2 badge badge-warning badge-lg join-item h-min">
+          <div
+            class="ml-2 badge badge-warning badge-lg join-item h-min hover:badge-neutral"
+          >
             <a href={frontmatter.source.url} class="">
               Source - {frontmatter.source.title}
             </a>
@@ -52,7 +54,7 @@ const { frontmatter } = Astro.props;
                 frontmatter.tags.map((tag) => (
                   <li class="inline-block">
                     <a href="">
-                      <span class="m-1 badge badge-lg badge-ghost transition-transform hover:shadow-lg hover:scale-110">
+                      <span class="m-1 badge badge-lg badge-ghost transition-transform hover:scale-110">
                         #{tag}
                       </span>
                     </a>
