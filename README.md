@@ -17,6 +17,11 @@ This document outlines clear steps for efficiently building a small project
 - Create dynamic blog page
 - Set up markdown (mdx) content for blog page
 - Configure helper code or modules for SEO, markdown rendering, processing tasks, etc.
+- Configure service worker for offline support
+- Configure build and deploy scripts
+- Set up a CI/CD pipeline (GitHub Actions, Netlify)
+- Configure manifest
+  
 
 ### Phase 2: Design - Add styling and animations
 - Add CSS
@@ -32,6 +37,7 @@ This document outlines clear steps for efficiently building a small project
 ```text
 ├── public/
 ├── src/
+│   ├── assets/
 │   ├── components/
 │   ├── content/
 │   ├── layouts/
@@ -61,6 +67,7 @@ For the purposes of this project, keep all feature development local.
 - [Vite](https://vitejs.dev/)
 - [Tailwindcss](https://tailwindcss.com/docs)
 - [Motion](https://motion.dev/)
+- [Workbox - Service Worker Library](https://developer.chrome.com/docs/workbox)
 - [mdx](https://mdxjs.com/)
 - [iconify logos](https://icon-sets.iconify.design/logos/)
 - [iconify line-md](https://icon-sets.iconify.design/line-md/)
