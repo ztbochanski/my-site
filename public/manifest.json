@@ -13,6 +13,18 @@
       "sizes": "512x512",
       "src": "icon512_rounded.webp",
       "type": "image/webp"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "192x192",
+      "src": "apple-touch-icon.png",
+      "type": "image/png"
     }
   ],
   "orientation": "any",
