@@ -1,9 +1,8 @@
 ---
-import AnimationLayout from "../layouts/AnimationLayout.astro";
 import Card from "../components/Card/index.astro";
-import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
 import OverviewCard from "../components/OverviewCard.astro";
-import ProjectsCard from "../components/ProjectsCard.astro";
+import FeaturedCard from "../components/FeaturedCard.astro";
 import SkillsCard from "../components/SkillsCard.astro";
 import TechnicalCard from "../components/TechnicalCard.astro";
 import WelcomeCard from "../components/WelcomeCard.astro";
@@ -11,59 +10,35 @@ import WelcomeCard from "../components/WelcomeCard.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<script>
-  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../consts";
-  const cards = document.querySelectorAll(".card");
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main
+    class="mx-auto grid px-4 pb-4 pt-2 gap-2 max-w-6xl overflow-hidden relative md:grid-cols-4 md:gap-3 md:px-6 md:pb-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+  >
+    <WelcomeCard />
+    <OverviewCard />
+    <FeaturedCard />
+    <SkillsCard />
+    <TechnicalCard />
 
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
-      {
-        at: "-0.1",
-        duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-      },
-    ],
-  ];
-
-  timeline(sequence as TimelineDefinition);
-</script>
-
-<AnimationLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <div class="md:h-screen flex flex-col justify-center items-center">
-    <Header />
-    <main
-      class="mx-auto grid px-4 pb-4 pt-2 gap-2 max-w-6xl overflow-hidden relative w-full md:grid-cols-4 md:gap-3 md:px-6 md:pb-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+    <Card
+      colSpan="md:col-span-1"
+      rowSpan="md:row-span-1"
+      title="Blog"
+      href="/blog"
+      hoverShadowSize="xl"
+      className="bg-primary text-primary-content"
     >
-      <WelcomeCard />
-      <OverviewCard />
-      <SkillsCard />
-      <TechnicalCard />
-      <ProjectsCard />
-      <Card
-        colSpan="md:col-span-1"
-        rowSpan="md:row-span-1"
-        title="Blog"
-        href="/blog"
-        hoverShadowSize="xl"
-        className="bg-primary text-primary-content"
-      >
-        <p class="text-sm">Rust... and data science</p>
-      </Card>
-      <Card
-        colSpan="md:col-span-1"
-        rowSpan="md:row-span-1"
-        title="Contributions"
-        href="/blog"
-        hoverShadowSize="xl"
-        className="bg-neutral text-neutral-content"
-      >
-        <p class="text-sm">Open Source</p>
-      </Card>
-    </main>
-  </div>
-</AnimationLayout>
+      <p class="text-sm">Rust... and data science</p>
+    </Card>
+    <Card
+      colSpan="md:col-span-1"
+      rowSpan="md:row-span-1"
+      title="Contributions"
+      href="/blog"
+      hoverShadowSize="xl"
+      className="bg-neutral text-neutral-content"
+    >
+      <p class="text-sm">Open Source</p>
+    </Card>
+  </main>
+</Layout>
