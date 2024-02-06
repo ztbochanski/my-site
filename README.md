@@ -68,8 +68,8 @@ For the purposes of this project, keep all feature development local.
 - [Tailwindcss](https://tailwindcss.com/docs)
 - [Workbox - Service Worker Library](https://developer.chrome.com/docs/workbox)
 - [mdx](https://mdxjs.com/)
-- [iconify logos](https://icon-sets.iconify.design/simple-icons/)
-- [iconify line-md](https://icon-sets.iconify.design/line-md/)
+- [iconify simple-icons](https://icon-sets.iconify.design/simple-icons/)
+- [iconify remix](https://icon-sets.iconify.design/remix/)
 - [iconify noto emojis](https://icon-sets.iconify.design/noto/)
 
 ## 🧞 Commands
