@@ -5,6 +5,8 @@ import { Icon } from "astro-icon/components";
 <header>
   <nav
     class="navbar flex flex-col sm:flex sm:flex-row p-2 sm:px-4 sm:pt-4 sm:pb-2 m-auto min-h-0 max-w-6xl overflow-hidden justify-center items-center"
+    transition:animate="none"
+    transition:persist
   >
     <div>
       <ul class="p-2 join join-horizontal">
@@ -19,55 +21,6 @@ import { Icon } from "astro-icon/components";
           >
         </li>
       </ul>
-    </div>
-    <div class="hidden sm:flex p-0 m-0 mr-4 divider divider-horizontal">·</div>
-    <div class="join join-horizontal p-2">
-      <input
-        type="radio"
-        name="theme-buttons"
-        class="btn btn-sm theme-controller join-item"
-        aria-label="Light"
-        value="light"
-        data-set-theme="light"
-        data-act-class="btn-primary"
-      />
-      <input
-        type="radio"
-        name="theme-buttons"
-        class="btn btn-sm theme-controller join-item"
-        aria-label="Acid"
-        value="acid"
-        data-set-theme="acid"
-        data-act-class="btn-primary"
-      />
-      <input
-        type="radio"
-        name="theme-buttons"
-        class="btn btn-sm theme-controller join-item"
-        aria-label="Nord"
-        value="nord"
-        data-set-theme="nord"
-        data-act-class="btn-primary"
-      />
-
-      <input
-        type="radio"
-        name="theme-buttons"
-        class="btn btn-sm theme-controller join-item"
-        aria-label="Dark"
-        value="dark"
-        data-set-theme="dark"
-        data-act-class="btn-primary"
-      />
-      <input
-        type="radio"
-        name="theme-buttons"
-        class="btn btn-sm theme-controller join-item"
-        aria-label="Black"
-        value="black"
-        data-set-theme="black"
-        data-act-class="btn-primary"
-      />
     </div>
   </nav>
 </header>
