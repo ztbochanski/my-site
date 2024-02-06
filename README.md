@@ -66,10 +66,9 @@ For the purposes of this project, keep all feature development local.
 - [Astro](https://astro.build)
 - [Vite](https://vitejs.dev/)
 - [Tailwindcss](https://tailwindcss.com/docs)
-- [Motion](https://motion.dev/)
 - [Workbox - Service Worker Library](https://developer.chrome.com/docs/workbox)
 - [mdx](https://mdxjs.com/)
-- [iconify logos](https://icon-sets.iconify.design/logos/)
+- [iconify logos](https://icon-sets.iconify.design/simple-icons/)
 - [iconify line-md](https://icon-sets.iconify.design/line-md/)
 - [iconify noto emojis](https://icon-sets.iconify.design/noto/)
 
