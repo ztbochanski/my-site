@@ -21,7 +21,10 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
-  <main class="flex flex-col max-w-3xl mx-auto p-8 pt-4">
+  <main
+    class="flex flex-col max-w-3xl mx-auto p-8 pt-4"
+    transition:animate="fade"
+  >
     <article class="pb-4">
       <h1 class="text-4xl font-bold">{frontmatter.title}</h1>
       <div class="pt-2">
@@ -45,7 +48,7 @@ const { frontmatter } = Astro.props;
           </div>
         </div>
 
-        <div class="card card-compact flex my-6">
+        <div class="card card-compact flex my-6" transition:animate="slide">
           <div class="card-body">
             <ul class="list-none">
               {
@@ -79,7 +82,11 @@ const { frontmatter } = Astro.props;
         </div>
       </div>
       <hr />
-      <div class="pt-6">
+      <div
+        class="pt-6"
+        transition:animate="slide"
+        transition:name="blog-content"
+      >
         <Prose>
           <slot />
         </Prose>
