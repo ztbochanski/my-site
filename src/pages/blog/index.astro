@@ -1,7 +1,6 @@
 ---
-import AnimationLayout from "../../layouts/AnimationLayout.astro";
 import Footer from "../../components/Footer.astro";
-import Header from "../../components/Header.astro";
+import Layout from "../../layouts/Layout.astro";
 import PostRow from "../../components/PostRow.astro";
 import { BLOG_TITLE, BLOG_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
@@ -11,18 +10,8 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<script>
-  import { timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../../consts";
-
-  const sequence = [loaderAnimation];
-
-  timeline(sequence as TimelineDefinition);
-</script>
-
-<AnimationLayout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
-  <Header />
-  <main class="w-screen h-screen flex flex-col max-w-3xl mx-auto p-8 pt-4">
+<Layout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
+  <main class="w-screen flex flex-col max-w-3xl mx-auto p-8 pt-4">
     <section>
       <h1 class="text-4xl font-bold mb-4">Posts</h1>
       <ul class="w-full">
@@ -39,4 +28,4 @@ const posts = (await getCollection("blog")).sort(
     </section>
   </main>
   <Footer />
-</AnimationLayout>
+</Layout>
