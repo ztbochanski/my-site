@@ -1,22 +1,113 @@
 ---
-import FeaturedCard from "../../components/FeaturedCard.astro";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layouts/Layout.astro";
 import PostRow from "../../components/PostRow.astro";
 import { BLOG_TITLE, BLOG_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+
+const projects = [
+  {
+    name: "NLP - Before it was Cool",
+    link: "https://github.com/ztbochanski/sugery-recovery-assistant-api/README.md",
+  },
+  {
+    name: "Rust - Grep Utility",
+    link: "https://github.com/ztbochanski/rust-grep-uitility/blob/main/rustgrep/src/lib.rs",
+  },
+  {
+    name: "Computer Vision CLI - Handwriting Recognition",
+    link: "https://github.com/ztbochanski/flight-logbook-ingester/README.md",
+  },
+  {
+    name: "Parallel Programming - Performance Analysis",
+    link: "https://github.com/ztbochanski/parallel-programming-CUDA/blob/main/README.md",
+  },
+  {
+    name: "Rust - Web Server",
+    link: "https://github.com/ztbochanski/rust-web-server/blob/main/src/lib.rs",
+  },
+  {
+    name: "Operating Systems - Page Tables",
+    link: "https://github.com/ztbochanski/page-tables/blob/main/README.md",
+  },
+  {
+    name: "Design Patterns - Command Pattern",
+    link: "https://github.com/ztbochanski/command-design-pattern",
+  },
+  {
+    name: "Documentation Example",
+    link: "https://flight-review.netlify.app/",
+  },
+  {
+    name: "Design Patterns - Decorators",
+    link: "https://github.com/ztbochanski/decorator-pattern/blob/main/decorator.rb",
+  },
+  {
+    name: "Assembly - Prime Numbers with x86",
+    link: "https://github.com/ztbochanski/x86-prime-number-calculator/blob/main/prime_number_calculator.asm",
+  },
+  {
+    name: "Assembly - Numeric String Validation with x86",
+    link: "https://github.com/ztbochanski/x86-numeric-string-validation/blob/main/numerical_string_validation.asm",
+  },
+  {
+    name: "Classical AI Algorithm - A-Star Search",
+    link: "https://github.com/ztbochanski/a-star-search/blob/main/README.md",
+  },
+  {
+    name: "OS Scheduling - Multi-Level Feedback Queue",
+    link: "https://github.com/ztbochanski/xv6-mlfq-lottery-scheduler",
+  },
+  {
+    name: "Concurrency Problems - C Implementations",
+    link: "https://github.com/ztbochanski/classical-concurrency-problems/blob/main/README.md",
+  },
+  {
+    name: "Design Patterns - Observer",
+    link: "https://github.com/ztbochanski/observer-design-pattern/blob/main/observer.rb",
+  },
+  {
+    name: "Operating Systems - Memory Allocation",
+    link: "https://github.com/ztbochanski/memory-allocator/blob/main/myalloc.c",
+  },
+];
 ---
 
 <Layout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
   <main class="w-screen flex flex-col max-w-3xl mx-auto p-8 pt-4">
     <div>
       <h1 class="text-4xl font-bold mb-4">Welcome to my blog</h1>
-      <p class="text-lg">Findings, projects, other interesting thins...</p>
-      <div class="m-4 p-4"><FeaturedCard /></div>
+      <p class="text-lg">Findings, projects, other interesting things...</p>
+      <div
+        class="card border border-gray-200 my-6 p-6 transfor-y-[-40%] shadow-lg align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto"
+      >
+        <div class="flex flex-col w-fit h-full">
+          <ul class="list-none font-light">
+            {
+              projects.map((project) => (
+                <li>
+                  <a
+                    class="mb-2 flex link link-hover hover:text-info"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="mr-2 mt-1">
+                      <Icon name="noto:link" class="w-4 h-4" />
+                    </span>
+                    {project.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </div>
     <section>
       <h1 class="text-4xl font-bold mb-4">Posts</h1>
