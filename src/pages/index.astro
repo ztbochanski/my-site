@@ -1,5 +1,4 @@
 ---
-import { fade } from "astro:transitions";
 import Card from "../components/Card/index.astro";
 import Layout from "../layouts/Layout.astro";
 import OverviewCard from "../components/OverviewCard.astro";
@@ -14,7 +13,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main
     class="mx-auto grid px-4 pb-4 pt-2 gap-2 max-w-6xl overflow-hidden relative md:grid-cols-4 md:gap-3 md:px-6 md:pb-6 lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
-    transition:animate="slide"
   >
     <WelcomeCard />
     <OverviewCard />

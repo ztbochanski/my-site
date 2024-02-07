@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 
@@ -15,17 +14,13 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <ViewTransitions />
   </head>
 
-  <body
-    class="bg-base-100 flex flex-col items-center"
-    transition:animate="fade"
-  >
+  <body class="bg-base-100 flex flex-col items-center">
     <!-- nav -->
     <Header />
     <!-- main div -->
-    <div transition:animate="slide">
+    <div>
       <slot />
     </div>
   </body>
