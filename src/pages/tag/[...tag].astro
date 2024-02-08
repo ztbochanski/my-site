@@ -26,17 +26,6 @@ const { posts } = Astro.props;
 ---
 
 <Layout title=`Zach - ${tag}` description={tag}>
-  <!-- <ul>
-    {
-      posts.map((post) => (
-        <PostRow
-          url={"/posts/" + post.slug}
-          title={post.data.title}
-          date={post.data.pubDate}
-        />
-      ))
-    }
-  </ul> -->
   <main class="w-screen min-h-screen max-w-3xl mx-auto p-8 pt-4">
     <section>
       <h1 class="text-xl md:text-4xl font-bold mb-4">
