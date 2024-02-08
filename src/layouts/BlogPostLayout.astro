@@ -51,7 +51,7 @@ const { frontmatter } = Astro.props;
               {
                 frontmatter.tags.map((tag) => (
                   <li class="inline-block">
-                    <a href="">
+                    <a href={`/tag/${tag}`}>
                       <span class="m-1 badge badge-lg badge-ghost transition-transform hover:scale-110">
                         #{tag}
                       </span>
