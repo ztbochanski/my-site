@@ -1,7 +1,5 @@
 export const SITE_TITLE = 'Zach - Software Engineer';
 export const SITE_DESCRIPTION = 'Software engineer portfolio with strong focus on software engineering fundamentals, systems, and data science.';
-export const BLOG_TITLE = 'Zach - Blog';
-export const BLOG_DESCRIPTION = 'Notes on software engineering, data science, and systems.';
 
 export const LINKS = {
   github: "https://github.com/ztbochanski",
