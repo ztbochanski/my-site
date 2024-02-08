@@ -1,0 +1,113 @@
+---
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const PROJECT_TITLE = "Zach - Projects";
+const PROJECT_DESCRIPTION =
+  "Examples of software engineering best practices, design patterns, data science, and systems";
+const projects = [
+  {
+    name: "NLP - Before it was Cool",
+    link: "https://github.com/ztbochanski/sugery-recovery-assistant-api/README.md",
+  },
+  {
+    name: "Rust - Grep Utility",
+    link: "https://github.com/ztbochanski/rust-grep-uitility/blob/main/rustgrep/src/lib.rs",
+  },
+  {
+    name: "Computer Vision CLI - Handwriting Recognition",
+    link: "https://github.com/ztbochanski/flight-logbook-ingester/README.md",
+  },
+  {
+    name: "Parallel Programming - Performance Analysis",
+    link: "https://github.com/ztbochanski/parallel-programming-CUDA/blob/main/README.md",
+  },
+  {
+    name: "Rust - Web Server",
+    link: "https://github.com/ztbochanski/rust-web-server/blob/main/src/lib.rs",
+  },
+  {
+    name: "Operating Systems - Page Tables",
+    link: "https://github.com/ztbochanski/page-tables/blob/main/README.md",
+  },
+  {
+    name: "Design Patterns - Command Pattern",
+    link: "https://github.com/ztbochanski/command-design-pattern",
+  },
+  {
+    name: "Documentation Example",
+    link: "https://flight-review.netlify.app/",
+  },
+  {
+    name: "Design Patterns - Decorators",
+    link: "https://github.com/ztbochanski/decorator-pattern/blob/main/decorator.rb",
+  },
+  {
+    name: "Assembly - Prime Numbers with x86",
+    link: "https://github.com/ztbochanski/x86-prime-number-calculator/blob/main/prime_number_calculator.asm",
+  },
+  {
+    name: "Assembly - Numeric String Validation with x86",
+    link: "https://github.com/ztbochanski/x86-numeric-string-validation/blob/main/numerical_string_validation.asm",
+  },
+  {
+    name: "Classical AI Algorithm - A-Star Search",
+    link: "https://github.com/ztbochanski/a-star-search/blob/main/README.md",
+  },
+  {
+    name: "OS Scheduling - Multi-Level Feedback Queue",
+    link: "https://github.com/ztbochanski/xv6-mlfq-lottery-scheduler",
+  },
+  {
+    name: "Concurrency Problems - C Implementations",
+    link: "https://github.com/ztbochanski/classical-concurrency-problems/blob/main/README.md",
+  },
+  {
+    name: "Design Patterns - Observer",
+    link: "https://github.com/ztbochanski/observer-design-pattern/blob/main/observer.rb",
+  },
+  {
+    name: "Operating Systems - Memory Allocation",
+    link: "https://github.com/ztbochanski/memory-allocator/blob/main/myalloc.c",
+  },
+];
+---
+
+<Layout title={PROJECT_TITLE} description={PROJECT_DESCRIPTION}>
+  <main class="w-screen max-w-3xl mx-auto p-8 pt-4">
+    <div>
+      <h1 class="text-4xl font-bold mb-4">Examples</h1>
+      <p class="text-lg">
+        Design patterns, complete products, low-level, high-level...
+      </p>
+      <div class="card border shadow-lg border-gray-200 my-6 p-6">
+        <div class="">
+          <ul class="list-none font-light">
+            {
+              projects.map((project) => (
+                <li>
+                  <a
+                    class="mb-2 flex link link-hover hover:text-info"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="mr-2 mt-1">
+                      <Icon name="noto:link" class="w-4 h-4" />
+                    </span>
+                    {project.name}
+                    <span class="mt-1 ml-1">
+                      <Icon name="ri:external-link-line" class="w-4 h-4" />
+                    </span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
