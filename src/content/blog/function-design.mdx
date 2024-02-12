@@ -1,0 +1,147 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Function Design'
+description: 'How functions are designed can greatly affect the programmability of a language.'
+pubDate: 2024-1-24
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Structured_programming'
+tags:
+  - programming-languages
+  - functions
+  - return-statements
+  - return-type
+  - multi-value-return
+  - type-checking-parameters
+  - passing-functions
+  - function-pointers
+  - deep-vs-shallow-binding
+  - structured-programming
+  - return-statement
+  - functional
+  - higher-order-functions
+  - callback-functions
+  - first-class-citizen
+  - formal-parameters
+  - actual-parameters
+---
+
+## Introduction to Function Design
+
+The way a programming language is designed affects how we use it. The design of functions, in particular, can make a big difference in how easy it is to write programs in that language.
+
+## Return Statements
+
+A <a href="https://en.wikipedia.org/wiki/Return_statement" target="_blank">return statement</a> in a function tells the program to stop running that function and go back to where it was called. It also lets us send a value back to the part of the code that called the function.
+
+>Aftr the ruturn statement: Execution leaves the current function and resumes execution at a location in code (saved as the return address by the calling routine) following the call to the function.
+
+The general syntax of a return statement is:
+
+```py
+return <expression>
+```
+
+If the return type of the function is void, the return statement is used without an expression.
+
+In some languages, the return statement can be written explicitly or inferred implicitly. If the return statement is omitted, the last evaluated expression of the function body is returned.
+
+## Multiple Return Statements
+
+Some programmers argue that a function should have only one way in and one way out. They say that having multiple return statements makes code harder to follow.
+
+Others believe that having multiple return statements can make code more readable, especially when certain conditions need to be met before the function finishes its job.
+
+><a href="https://en.wikipedia.org/wiki/Structured_programming" target="_blank">Structured programming</a> argues that functions should have a single entry point and a single exit point. This opinion argues that the use of multiple return statements makes code more convoluted.
+
+The alternate argument is multiple return statements can improve readability. For example, the guard clause pattern is often used. This is a conditional statement near the beginning of a function to allow an early exit from the function in case certain conditions are not met.
+
+## Return Type
+
+The return type of a function tells us what type of value the function will give back when it finishes running. In many languages, we need to specify the return type when we declare the function.
+
+If a function doesn't return anything, it's often indicated by using a return type of "void."
+
+The <a href="https://en.wikipedia.org/wiki/Return_type" target="_blank">return type</a> defines the type of the value returned from a function. Most statically-typed languages require the type of the returned value to be stated explicitly in the function declaration.
+
+Procedures, which are functions that do not return a value, are indicated with a return type of `void` type in `C-like languages` => return is used without a return value.
+
+## Multi-Value Return
+
+Most languages allow functions to return only one value. However, some languages like Ruby let us return multiple values from a function. We can return nothing, one value, or a group of values in a <a href="https://en.wikipedia.org/wiki/Semipredicate_problem#Multivalued_return" target="_blank">multivalued return</a>.
+
+In `Ruby`, functions can return multiple values. If no values are explicitly returned, the function returns nil. If a single value is provided after the return keyword, that value is returned. When multiple values are provided, separated by commas, Ruby returns an array containing those values.
+
+## Type Checking Parameters
+
+Type checking parameters involves the process of matching the actual parameters, also known as arguments, with the formal parameters of a function during its invocation.
+
+- Actual parameters (arguments): These are the values passed to a function when it is called. They represent the real data that the function will operate on. For example, if a function is defined to accept two integers as parameters, the actual parameters would be the specific integer values passed to the function when it is called.
+
+- Formal parameters: These are the parameters listed in the function definition. They act as placeholders for the actual parameters that will be passed when the function is called. Formal parameters define the type and order of the data that the function expects to receive. Within the function body, formal parameters are used to refer to the values passed as actual parameters during the function call.
+
+During the function call, the actual parameters are matched with the formal parameters based on their position and type. The values of the actual parameters are assigned to the corresponding formal parameters, allowing the function to work with the provided data. Type checking ensures that the actual parameters are compatible with the formal parameters in terms of data type and number. If there is a mismatch between the actual and formal parameters, it may result in a type error or unexpected behavior during function execution.
+
+## Passing Functions
+
+Some languages allow a function to be passed as a parameter to another function.
+
+- `Function as a First-Class Citizen:` In languages that support passing functions as parameters, functions are treated as first-class citizens. This means functions can be treated like any other data type, such as integers or strings. They can be assigned to variables, stored in data structures, and passed as arguments to other functions.
+
+- `Higher-Order Functions:` Functions that accept other functions as parameters or return functions as results are known as higher-order functions. They provide a level of abstraction that allows for more flexible and reusable code.
+
+- `Flexibility and Abstraction:` Passing functions as parameters enables a high degree of flexibility and abstraction in programming. It allows developers to write generic functions that can work with different behaviors specified by the function passed as an argument. This promotes code reuse and modularity.
+
+- `Callback Functions:` One common use case for passing functions as parameters is in the implementation of callback functions. Callback functions are functions passed as arguments to another function and are invoked asynchronously or at a later time in response to certain events or conditions.
+
+- `Functional Programming Paradigm:` Passing functions as parameters is a fundamental concept in functional programming languages. In functional programming, functions are treated as the primary building blocks of programs, and higher-order functions play a central role in composing and manipulating functions to perform complex tasks.
+
+Languages like `JavaScript`, `Python`, `Ruby`, and many others support passing functions as parameters, making them versatile tools for developers to express computation in concise and expressive ways.
+
+### Function Pointers
+
+`C` and `C++` do not allow functions to be passed directly, but instead, allow a `pointer` to a function to be passed.
+
+### Deep vs Shallow Binding
+
+Deep and shallow binding refer to different strategies for handling environments (variable scopes) in languages that support nested functions or closures. Let's elaborate on these concepts:
+
+**Deep Binding:**
+In deep binding, the environment (or variable scope) used by a nested function is determined at the time the function is defined or "bound" to a variable. This means that the inner function retains access to the variables in the environment where it was defined, even if the function is called from a different context.
+
+Here's an example in Python:
+
+```py
+def outer():
+    x = 10
+    def inner():
+        print(x)  # inner function uses the x from the outer function
+    return inner
+
+fn = outer()
+fn()  # Prints 10
+```
+In deep binding, the inner function keeps a reference to the x variable from the outer function's environment, even if it's called outside of outer.
+
+**Shallow Binding:**
+In shallow binding, the environment used by a nested function is determined at the time the function is called, rather than when it's defined. This means that the inner function accesses variables from the environment where it's called, not where it's defined.
+
+Here's an example of shallow binding:
+```py
+def outer():
+    x = 10
+    def inner():
+        print(x)  # inner function looks for x in the environment where it's called
+    return inner
+
+fn = outer()
+x = 20
+fn()  # Prints 20, because it looks for x in the environment where it's called
+```
+In shallow binding, the inner function references the x variable in the environment where it's called, which is outside of outer in this case.
+
+**Summary:**
+- Deep binding captures the environment of the outer function at the time the inner function is defined.
+- Shallow binding captures the environment of the outer function at the time the inner function is called.
+Understanding the distinction between deep and shallow binding is crucial for managing variable scopes and closures effectively in programming languages that support nested functions or closures, such as Python, JavaScript, and Ruby. Each strategy has its own implications for how functions behave and access variables in different contexts.

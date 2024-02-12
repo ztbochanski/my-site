@@ -1,0 +1,67 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Concurrency'
+description: 'The ability of different parts of a program to execute separately, and potentially out of order, which allows for parallel execution.'
+pubDate: 2024-2-7
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Concurrency_(computer_science)'
+tags:
+  - programming-languages
+  - concurrency
+  - parallel-computing
+  - parallel-programming
+  - multiprogramming
+  - process
+  - multithreading
+  - task
+  - task-synchronization
+  - race-condition
+  - deadlock
+  - semaphore
+  - producer-consumer-problem
+  - edsger-dijkstra
+  - operating-systems
+  - distributed-computing
+---
+
+[Concurrency](<https://en.wikipedia.org/wiki/Concurrency_(computer_science)>) is the ability of different parts of a program to execute separately, and potentially out of order, which allows for parallel execution. Concurrency occurs in all four programming paradigms: imperative, object-oriented, functional, and logic.
+
+Studying operating systems explores concurrency in greater depth. Check out these [classical concurrency problems](https://github.com/ztbochanski/classical-concurrency-problems) solved in C.
+
+## Where is Concurrency Found?
+
+[Concurrency](<https://en.wikipedia.org/wiki/Concurrency_(computer_science)>) in software execution occurs at many levels. It can occur at the instruction level in which two or more machine instructions execute simultaneously. It can occur at the statement level in which two or more high-level statements execute concurrently. It can occur at a unit level, in which multiple functions execute simultaneously, or at the program level, in which two or more programs execute concurrently. The study of programming languages is most concerned with concurrency at the statement and unit levels. The other levels of concurrency are traditionally studied in the context of operating systems.
+
+## Concepts
+
+[Multiprogramming](https://en.wikipedia.org/wiki/Computer_multitasking#Multiprogramming) occurs when several programs are loaded into memory and executed in an interleaved manner with a [scheduler](<https://en.wikipedia.org/wiki/Scheduling_(computing)#SCHEDULER>) that switches from one process to another. This enables [time-sharing](https://en.wikipedia.org/wiki/Time-sharing) which allows multiple users to communicate with a computer simultaneously.
+
+A [process](<https://en.wikipedia.org/wiki/Process_(computing)>) is an execution context, which includes registers, activation stack, and the next instruction to be executed. A [concurrent program](https://en.wikipedia.org/wiki/Concurrent_computing) is a program designed to have two or more execution contexts. Such a program is said to be multithreaded since more than one execution context can be active simultaneously.
+
+A [parallel program](https://en.wikipedia.org/wiki/Parallel_computing) is a concurrent program in which two or more threads are simultaneously active. A [distributed program](https://en.wikipedia.org/wiki/Distributed_computing) is designed to be run across different computers connected by a network. The term `concurrency` generally implies a program with multiple active threads, whether parallel or distributed.
+
+## Tasks
+
+A [task](<https://en.wikipedia.org/wiki/Task_(computing)>) is a program unit that can be in concurrent execution with other program units. A task is usually known as a [process](<https://en.wikipedia.org/wiki/Process_(computing)>) or a [thread](<https://en.wikipedia.org/wiki/Thread_(computing)>).
+
+Tasks in concurrent programs differ from tasks in ordinary subprograms. While a subprogram must be explicitly called, a task may be implicitly started. Another difference occurs when a program unit starts the execution of a task, as program execution is not suspended while it waits for the task to complete. Lastly, when a subprogram returns, control is returned to the caller. This is not usually the case with a task. Moreover, tasks often work together and share resources in ways that subprograms usually do not.
+
+Heavyweight tasks are tasks that execute in their own dedicated address space. [Lightweight](https://en.wikipedia.org/wiki/Light-weight_process) all run in the same address space, which can be more efficient and easier to implement. If a task does not communicate with other tasks or share resources, it is known as a disjoint task.
+
+## Task Synchronization
+
+[Synchronization](<https://en.wikipedia.org/wiki/Synchronization_(computer_science)>) is the coordination of concurrent processes to ensure that they are executed in a particular order. Synchronization is a key concept in concurrent programming. Without synchronization, concurrent processes may execute in an unpredictable order, which can lead to incorrect results.
+
+[Task synchronization](<https://en.wikipedia.org/wiki/Synchronization_(computer_science)#Thread_or_process_synchronization>) is a mechanism that controls the order in which tasks execute. In the remainder of this exploration, we'll discuss strategies for concurrency when tasks share a resource. There are two kinds of synchronization: cooperation and competition.
+
+In a cooperation synchronization, Task A must wait for task B to complete some specific activity before task A can continue its execution. This is known as the [producer-consumer problem](https://en.wikipedia.org/wiki/Producer–consumer_problem).
+
+In a competition synchronization, two or more tasks need to use some resource that cannot be simultaneously used, such as a shared counter. Competition is usually provided by mutually exclusive access. That is because the order in which the threads access the shared resource could alter the outcome. This situation is known as a [race condition](https://en.wikipedia.org/wiki/Race_condition) because two or more tasks are racing to use a shared resource and the outcome depends on which task wins the race. This can lead to [deadlock](https://en.wikipedia.org/wiki/Deadlock) in which a thread is waiting for an event that can never occur.
+
+## Semaphores
+
+A [semaphore](<https://en.wikipedia.org/wiki/Semaphore_(programming)>) is a relatively simple mechanism for providing synchronization of tasks. It is a data structure used for controlling access by multiple processes to a common resource. Semaphores were defined by [Edsger Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) in 1968 and are still used in concurrent programming today.
+
+A semaphore is a simple data structure that consists of a counter and a queue for storing task descriptors. A task descriptor is a data structure that stores all of the relevant information about the execution state of the task.

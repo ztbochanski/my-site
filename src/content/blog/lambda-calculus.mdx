@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Lambda Calculus'
+description: 'a formal system in mathematical logic for expressing computation based on function abstraction and application using variable binding and substitution.'
+pubDate: 2024-2-1
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Lambda_calculus'
+tags:
+  - programming-languages
+  - lambda-calculus
+  - functional-programming
+  - higher-order-functions
+  - currying
+  - alpha-conversion
+  - beta-reduction
+---
+
+[Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus) serves as a formal system in mathematical logic, enabling the expression of computation through function abstraction and application. By employing techniques like variable binding and substitution, it emerges as a universal model of computation capable of simulating any Turing machine.
+
+Understanding Lambda Calculus is pivotal for grasping the essence of functional programming, as it provides a formal framework for expressing functions and their computations. It is also the foundation of functional programming languages like Haskell, Lisp, and Scheme.
+
+## Review of Higher-Order Functions
+
+A <a href="https://en.wikipedia.org/wiki/Higher-order_function" target="_blank">higher-order function</a> function represents a function that either accepts functions as parameters, returns functions as results, or both. For instance, a differential operator, used to compute the <a href="https://en.wikipedia.org/wiki/Higher-order_function" target="_blank">derivative of a function</a>, exemplifies a higher-order function. It operates by mapping a function to its derivative, generating another function in the process.
+
+## Rules
+
+Lambda calculus operates under three fundamental rules:
+
+1. `[α] λx.E ⇔ λy.E[x/y]`
+2. `[β] (λx.E)F ⇒ E[x/F]`
+3. `[η] (λx.E x) ⇒ E if x not free in E`
+
+- <a href="https://en.wikipedia.org/wiki/Lambda_calculus#Alpha_conversion" target="_blank">alpha conversion</a> is the process of renaming bound variables in a lambda expression
+- <a href="https://en.wikipedia.org/wiki/Lambda_calculus#Beta_reduction" target="_blank">beta reduction</a> is the process of applying a function to an argument.
+- <a href="https://en.wikipedia.org/wiki/Lambda_calculus#Eta_conversion" target="_blank">eta reduction</a> is the process of removing a function that is applied to its argument.
+
+## Currying
+
+<a href="https://en.wikipedia.org/wiki/Currying" target="_blank">Currying</a> denotes a transformative process wherein a function that typically accepts multiple arguments is converted into a sequence of functions, each accepting a single argument. In essence, `currying` replaces a multi-parameter function with a chain of `unary functions`. This concept pays homage to the logician <a href="https://en.wikipedia.org/wiki/Haskell_Curry" target="_blank">Haskell Curry</a>, who contributed significantly to the field of mathematical logic.

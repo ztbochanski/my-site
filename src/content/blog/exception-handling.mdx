@@ -1,0 +1,49 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Exception Handling'
+description: 'The process of responding to the occurrence of exceptions – anomalous or exceptional conditions requiring special processing'
+pubDate: 2024-1-13
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Exception_handling'
+tags:
+  - programming-languages
+  - exception-handling
+  - termination-semantics
+  - resumption-semantics
+  - assertions
+---
+
+<a href="https://en.wikipedia.org/wiki/Exception_handling" target="_blank">Exception Handling</a> is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions requiring special processing – during the execution of a program. In general, an exception breaks the normal flow of execution and executes a pre-registered exception handler; the details of how this is done depend on whether it is a hardware or software exception and how the software exception is implemented.
+
+Exception handling was developed in <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)" target="_blank">Lisp</a> in 1962. The keyword `ERRSET` could be used to determine an error, rather than terminating the program execution.
+
+## Exception Propagation Issue
+
+A design issue for the design of exception handling is to determine where the exception must be handled. If the exception must be handled locally, then the handler must be written in place which affects the overall readability and writability of the language. Alternately, the language may allow the propagation of exceptions up the call stack to be handled by a different program unit. This allows a single exception handler to be written that might handle exceptions generated in different places in the program.
+
+## Termination vs. Resumption Semantics
+
+When designing exception handling capabilities of a language, the designers must consider where execution should resume after a handler has processed an exception. There are two basic approaches to exception handling: termination and resumption semantics.
+
+## Exception Syntax
+
+```c++
+// C++
+try {
+    // code that might throw an exception
+} catch (ExceptionType1 e1) {
+    // handle ExceptionType1
+} catch (ExceptionType2 e2) {
+    // handle ExceptionType2
+} catch (ExceptionType3 e3) {
+    // handle ExceptionType3
+} catch (...) {
+    // handle any exception
+}
+```
+
+## Assertions
+
+Somewhat related to exception handling is the concept of <a href="https://en.wikipedia.org/wiki/Assertion_(software_development)" target="_blank">Assertions</a>. An assertion is used for defensive programming to help ensure the program produces correct results. An assertion is a Boolean-valued predicate over the state space which should evaluate to be true at that location in the program.

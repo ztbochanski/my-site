@@ -1,0 +1,54 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Parameter Passing'
+description: 'Parameter passing evaluation methods determine when to evaluate arguments of a function call and how these values are passed to function.'
+pubDate: 2024-2-14
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: '<https://en.wikipedia.org/wiki/Evaluation_strategy'
+tags:
+  - programming-languages
+  - orthogonality
+  - parameter-passing
+  - call-by-value
+  - call-by-reference
+  - call-by-pointer
+  - call-by-value-result
+  - pass-by-reference
+  - pass-by-pointer
+  - pass-by-value-result
+  - evaluation-strategy
+---
+
+# Parameter Passing
+
+When a function is called, the actual parameters (arguments) given in the call are passed to the formal actual parameters of the function definition. Parameter passing [evaluation methods](https://en.wikipedia.org/wiki/Evaluation_strategy) determine when to evaluate arguments of a function call and how these values are passed to function.
+
+Parameter passing step by step at a low level with assembly code: [console-io/parameter-passing](https://github.com/ztbochanski/x86-console-io/blob/main/read_write_strings.asm)
+
+## Call by value
+
+[Call by value](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_value) is the most common parameter passing method. In this method, the actual parameters are evaluated first, and then the values of the actual parameters are passed to the function. This means that the function cannot change the value of the actual parameters.
+
+Pass by value is very fast for scalar values, such as simple primitive types. It is fast to reference the location of the value and fast to access the value itself.
+
+However, the copies made during pass by value evaluation use additional memory. This is often not consequential for simple types but can be very costly if the parameter is large, such as a complex object or array with many elements. There is also an additional time cost when copying large parameters.
+
+## Call by value result
+
+Pass by value-result combines the semantics of pass by value and pass by result. Therefore it is a form of in-out-mode semantics.
+
+At the time of the function call, the values of the actual parameters are copied to the formal parameters of the function, similar to pass by value. At the time of function return, the value of the formal parameters is copied back out to the actual parameters, similar to pass by result. Pass by value-result is also known as pass by copy since the values are copied in and copied out.
+
+Like pass by value, pass by value-result is fast to access the variables but requires extra time and space to perform the copy. For pass by value-result, this occurs on function call and on function return.
+
+One potential problem with pass by result and pass by value-result semantics occurs when there is a collision of parameter names.
+
+## Pass by reference
+
+Pass by reference is another form of in-out-mode semantics. Instead of copying values, however, pass by reference shares a reference to the called function. This gives the function an access path to the actual parameter and the function is allowed to modify it.
+
+## Pass by pointer
+
+Pass by pointer means to pass a pointer as an argument to a function. The called function can then modify the value of the variable to which the pointer points.

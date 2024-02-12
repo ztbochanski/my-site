@@ -1,0 +1,38 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Function Call and Return'
+description: 'Execution control of the program is given to the called function.'
+pubDate: 2023-11-23
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Call_stack#Structure'
+tags:
+  - programming-languages
+  - activation-record
+  - call-stack
+  - recursive-functions
+---
+
+When a function is called, execution control of the program is given to the called function. Each function call generates an activation record that tracks information about the arguments passed, the local variables of the function, and information to facilitate return execution control when the function returns. These activation records are stored on the call stack.
+
+## Activation Record
+
+An <a href="https://en.wikipedia.org/wiki/Call_stack#Structure" target="_blank">activation record</a> is a block of information associated with each function activation. This includes the function's parameters and local variables as well as additional book-keeping information.
+
+An activation record stores:
+
+- parameters and local variables
+- return value
+- return address
+- values of <a href="https://en.wikipedia.org/wiki/Processor_register" target="_blank">registers</a> of the state of the caller's environment
+- static link (pointer to the static environment, usually only needed by languages that permit functions to be nested)
+- dynamic link (pointer to the activation record of the calling function)
+
+## Function Call Stack
+
+A <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank">function call stack</a> is a stack data structure that stores information about the active subroutines of a computer program. This stack is also known as the execution stack, program stack, control stack, or machine stack.
+
+## Recursive Functions
+
+A <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" target="_blank">recursive function</a> is a function that calls itself. A recursive function must have a base case and a recursive case. The base case is the condition that stops the recursion. The recursive case is the condition that calls the function again.

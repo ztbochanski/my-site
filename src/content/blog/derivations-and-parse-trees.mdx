@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Derivations and Parse Trees'
+description: 'A sequential application of production rules to generate a sentence in the language.'
+pubDate: 2024-1-8
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Parse_tree'
+tags:
+  - programming-languages
+  - derivation
+  - parse-tree
+  - precedence
+  - associativity
+  - ambiguous-grammar
+---
+
+A <a href="https://en.wikipedia.org/wiki/Parse_tree" target="_blank">derivation</a> is a sequential application of production rules to generate a sentence in the language.
+
+> It is an ordered, rooted tree that represents the syntactic structure of a string according to some context-free grammar. The term parse tree itself is used primarily in computational linguistics; in theoretical syntax, the term syntax tree is more common.
+
+```
+String := Start Symbol
+REPEAT
+  Choose a nonterminal N in String
+  Find a production rule with N on left-hand side
+  Replace N with one of the right-hand options
+UNTIL String contains only terminals
+```
+
+## Precedence and Associativity
+
+A <a href="https://en.wikipedia.org/wiki/Order_of_operations" target="_blank">precedence</a> is the order in which operators are evaluated.
+<a href="https://en.wikipedia.org/wiki/Order_of_operations#Associativity" target="_blank">Associativity</a> is the order in which operators of the same precedence are evaluated.
+
+## Ambiguous Grammars
+
+An <a href="https://en.wikipedia.org/wiki/Ambiguous_grammar" target="_blank">ambiguous grammar</a> is a grammar for which there are multiple parse trees (leftmost derivation) for a given string.

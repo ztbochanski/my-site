@@ -1,0 +1,59 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Memory Management'
+description: 'Memory management is the run-time management of dynamic memory. This requires controlling and coordinating the assignment and release of computer memory.'
+pubDate: 2024-2-9
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Memory_management_(operating_systems)'
+tags:
+  - programming-languages
+  - memory-management
+  - memory-allocation
+  - garbage-collection
+  - memory-leak
+  - dangling-pointer
+  - static-allocation
+  - automatic-allocation
+  - dynamic-allocation
+  - heap
+  - process
+  - multithreading
+  - task
+  - operating-systems
+  - distributed-computing
+---
+
+The run-time management of dynamic memory is necessary activity in any modern programming language. This requires controlling and coordinating the assignment and release of computer memory.
+
+Studying operating systems explores memory management in greater depth. Check out this [memory allocator example](https://github.com/ztbochanski/memory-allocator/blob/main/myalloc.c) in C.
+
+## Memory allocation
+
+There are three major areas of memory:
+
+- Static Allocation
+- Automatic Allocation
+- Dynamic Allocation
+
+The [static area](https://en.wikipedia.org/wiki/Static_variable) contains items that are known before the program is run. This is memory space for data that is fixed size, fixed content such as constants, global variables, and variables explicitly defined as static. This amount of memory needed can be determined at compile time to enable allocation immediately when the program begins.
+
+[Automatic memory allocation](https://en.wikipedia.org/wiki/Call_stack) is needed for variable size, variable size content defined in functions. This provides space for locally declared variables in functions and to facilitate parameter-argument linkage during a function call. This memory allocation is _automatic_ in the sense that it is allocated on a call to a function and deallocated when a function returns, and is `not directly controlled by the programmer`.
+
+The [heap](https://en.wikipedia.org/wiki/Memory_management#Dynamic_memory_allocation) provides dynamic memory allocation. This is space for fixed size, variable content, such as objects and data structures that are dynamically allocated during run-time, such as strings, dynamic arrays, lists, and objects. The heap becomes fragmented over time as objects are allocated and deallocated over time. **Garbage collection** is used to manage heap memory and facilitate efficient utilization of memory.
+
+## Garbage collection
+
+[Garbage collection](<https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>) is a form of automatic memory management. The garbage collector, or just collector, attempts to reclaim garbage, or memory occupied by objects that are no longer in use by the program.
+
+> Garbage collection was first developed by [John McCarthy](<https://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)>) for memory management in the initial version of [Lisp](<https://en.wikipedia.org/wiki/Lisp_(programming_language)>)
+
+Garbage can occur when an allocated block of heap memory has no reference to it. This is a [memory leak](https://en.wikipedia.org/wiki/Memory_leak) because the memory becomes orphaned when no pointers to it exist. Garbage can also occur when a reference exists to a block of memory that is no longer allocated. This is known as a [dangling pointer](https://en.wikipedia.org/wiki/Dangling_pointer).
+
+Examples of garbage collection algorithms include:
+
+- [Reference counting](https://en.wikipedia.org/wiki/Reference_counting)
+- [Mark and sweep](https://en.wikipedia.org/wiki/Tracing_garbage_collection)
+- [Generational](https://en.wikipedia.org/wiki/Generational_garbage_collection)
+- [Stop and copy](https://en.wikipedia.org/wiki/Tracing_garbage_collection#Stop-and-copy)
