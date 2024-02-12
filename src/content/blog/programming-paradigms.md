@@ -2,18 +2,20 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Programming Paradigms'
 description: 'A way to classify programming languages based on their features. Programming languages can be classified into multiple paradigms at the same time.'
-pubDate: 2023-10-01
+pubDate: 2023-10-3
 category: 'programming-languages'
 source:
   title: 'Wikipedia'
   url: 'https://en.wikipedia.org/wiki/Programming_paradigm'
 tags:
-  - programming
+  - programming-languages
   - paradigms
-  - imperative
+  - imperative-programming
   - object-oriented
   - functional
   - logic
+  - assignment-statement
+  - conditional-statement
 ---
 
 <a href="https://en.wikipedia.org/wiki/Programming_paradigm" target="_blank">Programming paradigms</a> are a way to classify programming languages based on their features. Programming languages can exist in multiple paradigms at the same time. Languages can support multiple paradigms.
