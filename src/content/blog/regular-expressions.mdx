@@ -1,0 +1,84 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Regular Expressions'
+description: 'A sequence of characters that define a search pattern.'
+pubDate: 2024-1-1
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Regular_expression'
+tags:
+  - programming-languages
+  - formal-language
+  - chomsky-hierarchy
+  - regular-expressions
+  - regex
+  - search-pattern
+  - alphanumerics
+  - quantifiers
+  - anchors
+  - character-classes
+  - groups
+  - escaping
+  - flags
+---
+
+A <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank">Regular expression</a> is a sequence of characters that define a search pattern. Regular expressions are widely used to search for specific string or pattern in text.
+
+## Alphanumerics
+
+- Alphanumeric characters: `a-z`, `A-Z`, `0-9`
+- Non-alphanumeric characters: `^a-zA-Z0-9`
+
+## Quantifiers
+
+- `*`: 0 or more
+- `+`: 1 or more
+- `?`: 0 or 1
+- `{n}`: exactly n
+- `{n,}`: n or more
+- `{n,m}`: at least n and at most m
+
+## Anchors
+
+- `^`: start of string
+- `$`: end of string
+
+## Character Classes
+
+- `.`: any character except newline
+- `\w`: word character
+- `\W`: non-word character
+- `\d`: digit
+- `\D`: non-digit
+
+## Groups and Lookaround
+
+- `(...)` grouping
+- `|`: alternation
+- `(?=...)`: positive lookahead
+- `(?!...)`: negative lookahead
+
+## Escaping
+
+- `\`: escape character
+- `\t`: tab
+- `\n`: newline
+- `\r`: carriage return
+- `\f`: form feed
+- `\v`: vertical tab
+- `\0`: null character
+
+## Flags
+
+- `g`: global
+- `i`: case-insensitive
+- `m`: multiline
+
+## Examples
+
+- `^The`: match any string that starts with `The`
+- `end$`: match any string that ends with `end`
+- `^The end$`: match any string that is exactly `The end`
+- `The end`: match any string that contains `The end`
+- `The end|The beginning`: match any string that contains `The end` or `The beginning`
