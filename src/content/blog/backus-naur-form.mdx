@@ -1,0 +1,46 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: 'Backus-Naur Form'
+description: 'A metasyntax notation for describing the syntax of context-free languages.' 
+pubDate: 2023-12-22
+category: 'programming-languages'
+source:
+  title: 'Wikipedia'
+  url: 'https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form'
+tags:
+  - programming-languages
+  - formal-grammar
+  - syntax
+  - bnf
+  - metasyntax
+  - context-free-languages
+  - lexical-analysis
+  - lexeme
+  - language
+---
+# Backus-Naur Form
+
+<a href="https://en.wikipedia.org/wiki/Backus%E2%80%93Naur_form" target="_blank">BNF</a> is a <a href="https://en.wikipedia.org/wiki/Metasyntax" target="_blank">metasyntax</a> notation for describing the syntax of context-free languages. It is widely used in the design of programming languages and communication protocols.
+
+## Overview
+
+A <a href="https://en.wikipedia.org/wiki/Sentence_(linguistics)" target="_blank">sentence</a> is a string of characters over some alphabet. A <a href="https://en.wikipedia.org/wiki/Formal_language" target="_blank">language</a> is a set of sentences. A <a href="https://en.wikipedia.org/wiki/Lexical_analysis#Lexeme" target="_blank">lexeme</a> is the lowest level syntactic unit of a language. These include numbers `5`, operators `\*`, keywords `while`, or special symbols `{ or )`.
+
+A lexical token is a category of lexeme. It is a sequence of characters representing a symbol with a specific associated meaning. For example, an identifier is a token that can represent specific lexemes, such as x or count.
+
+A metalanguage is a language used to define other languages. A formal grammar is a metalanguage used to define the syntax of a language.
+
+## Terminals
+
+A terminal is a lexeme that cannot be broken down into smaller lexemes. For example, the lexeme `while` is a terminal. The lexeme `while (x < 5)` is not a terminal because it can be broken down into smaller lexemes, such as `while`, `(`, `x`, `<`, `5`, and `)`.
+
+## Non-terminals
+
+A non-terminal is a lexeme that can be broken down into smaller lexemes. For example, the lexeme `while (x < 5)` is a non-terminal because it can be broken down into smaller lexemes, such as `while`, `(`, `x`, `<`, `5`, and `)`.
+
+## Production rules
+
+A production rule is a rule that defines the syntax of a language. It is a set of production rules that define the syntax of a language. A production rule has the following form:
+
+```bnf
+<non-terminal> ::= <terminal> | <non-terminal> <terminal> | <non-terminal> <non-terminal>
