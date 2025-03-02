@@ -73,7 +73,7 @@ const currentYear = new Date().getFullYear();
       decoding="async"
       loading="lazy"
       quality="max"
-      class="select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-40 md:opacity-65 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none"
+      class="avatar-image select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-40 md:opacity-65 md:relative md:right-auto md:bottom-auto md:z-auto cursor-pointer"
     />
   </div>
   <div class="flex items-end justify-end">
@@ -87,3 +87,26 @@ const currentYear = new Date().getFullYear();
     </p>
   </div>
 </Card>
+
+<style>
+  .avatar-image {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .avatar-image:hover {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+  }
+
+  .avatar-image:active {
+    animation: spin 0.75s ease-in-out;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
