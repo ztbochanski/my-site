@@ -2,6 +2,7 @@
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layouts/Layout.astro";
 import PostRow from "../../components/PostRow.astro";
+import TagDisplay from "../../components/TagDisplay.astro";
 import { getCollection } from "astro:content";
 
 const BLOG_TITLE = "Zach - Blog";
@@ -12,17 +13,16 @@ const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-const tags = [
-  "CloudApps",
-  "Web",
-  "MLInfrastructure",
-  "Test-Driven-Dev",
-  "AlgorithmAnalysis",
-  "Mobile",
-  "RESTfulAPIs",
-  "CNNs/RNNs",
-  "ParallelPerformance",
-];
+// Count occurrences of each tag
+const tagCount = posts
+  .map((post) => post.data.tags)
+  .flat()
+  .reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {} as { [key: string]: number });
+
+const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
 <Layout title={BLOG_TITLE} description={BLOG_DESCRIPTION}>
@@ -31,23 +31,14 @@ const tags = [
       <h1 class="text-4xl font-bold mb-4">Welcome to my blog</h1>
       <p class="text-lg">Findings, projects, other interesting things...</p>
       <div
-        class="card border border-gray-200 my-6 p-6 transfor-y-[-40%] shadow-lg align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto"
+        class="card border border-gray-200 my-6 p-6 shadow-lg align-start justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 h-auto"
       >
-        <div class="flex flex-col w-fit h-full">
-          <ul class="list-none inline-flex flex-wrap gap-2">
-            {
-              tags.map((tag) => (
-                <li class="">
-                  <a href="">
-                    <span class="h-fit badge badge-ghost badge-md transition-transform hover:scale-110">
-                      #{tag}
-                    </span>
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+        <TagDisplay 
+          tags={uniqueTags} 
+          counts={tagCount} 
+          modalId="blog-tags-modal" 
+          modalTitle="All Blog Tags"
+        />
       </div>
     </div>
     <section>
