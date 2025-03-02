@@ -1,0 +1,88 @@
+---
+interface Props {
+  tags: string[];
+  counts?: { [key: string]: number };
+  maxDisplay?: number;
+  showCounts?: boolean;
+  modalTitle?: string;
+  modalId?: string;
+  showHeader?: boolean;
+}
+
+const {
+  tags,
+  counts = {} as { [key: string]: number },
+  maxDisplay = 6,
+  showCounts = true,
+  modalTitle = "All Tags",
+  modalId = "tag-modal",
+  showHeader = true,
+} = Astro.props;
+
+// If counts weren't provided, create an object with 1 for each tag
+const tagCounts: { [key: string]: number } = Object.keys(counts).length > 0 
+  ? counts 
+  : tags.reduce((acc, tag) => ({ ...acc, [tag]: 1 }), {} as { [key: string]: number });
+
+// Get trending tags (most used first)
+const trendingTags = [...tags]
+  .sort((a, b) => tagCounts[b] - tagCounts[a])
+  .slice(0, maxDisplay);
+---
+
+<div class="flex flex-col w-full h-full">
+  {showHeader && tags.length > maxDisplay && (
+    <div class="flex justify-between items-center mb-3">
+      <h2 class="text-lg font-semibold">Trending Topics</h2>
+      <button
+        class="text-sm text-gray-500 hover:text-primary transition-colors"
+        onclick={`document.getElementById('${modalId}').showModal()`}
+      >
+        View All ({tags.length})
+      </button>
+    </div>
+  )}
+  <ul class="list-none inline-flex flex-wrap gap-2">
+    {
+      trendingTags.map((tag) => (
+        <li>
+          <a href={`/tag/${tag}`} class="group">
+            <span class="h-fit badge badge-ghost badge-md transition-all hover:scale-105 hover:badge-primary">
+              #{tag}
+              {showCounts && (
+                <span class="ml-1 opacity-60 group-hover:opacity-100">
+                  {tagCounts[tag]}
+                </span>
+              )}
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<dialog id={modalId} class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg mb-4">{modalTitle}</h3>
+    <div class="grid grid-cols-2 gap-2">
+      {tags.map((tag) => (
+        <a href={`/tag/${tag}`} class="group">
+          <span class="h-fit badge badge-ghost badge-md transition-all hover:scale-105 hover:badge-primary">
+            #{tag}
+            {showCounts && (
+              <span class="ml-1 opacity-60 group-hover:opacity-100">
+                {tagCounts[tag]}
+              </span>
+            )}
+          </span>
+        </a>
+      ))}
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog> 
