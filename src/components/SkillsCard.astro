@@ -1,42 +1,48 @@
 ---
 import Card from "./Card/index.astro";
+import TagDisplay from "./TagDisplay.astro";
 import { Icon } from "astro-icon/components";
-const skills = [
-  "CloudApps",
-  "Web",
-  "MLInfrastructure",
-  "Test-Driven-Dev",
-  "AlgorithmAnalysis",
-  "Mobile",
-  "RESTfulAPIs",
-  "CNNs/RNNs",
-  "ParallelPerformance",
-];
+import { getCollection } from "astro:content";
+
+// Get all blog posts and extract unique tags
+const posts = await getCollection("blog");
+
+// Count occurrences of each tag
+const tagCount = posts
+  .map((post) => post.data.tags)
+  .flat()
+  .reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {} as { [key: string]: number });
+
+const skills = [...new Set(posts.map((post) => post.data.tags).flat())];
+const modalId = "skills-modal";
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <div class="h-full">
-    <header class="flex items-center">
-      <h1 class="text-xl font-semibold flex">
+    <header class="flex items-center justify-between mb-4">
+      <h1 class="text-xl font-semibold flex items-center">
         Skills<Icon name="noto:rocket" class="w-6 h-6 ml-2" />
       </h1>
+      <button 
+        class="text-sm text-gray-500 hover:text-primary transition-colors"
+        onclick={`document.getElementById('${modalId}').showModal()`}
+      >
+        View All ({skills.length})
+      </button>
     </header>
     <div class="mt-2">
-      <p>
-        <ul class="list-none inline-flex flex-wrap gap-2">
-          {
-            skills.map((skill) => (
-              <li class="">
-                <a href="">
-                  <span class="h-fit badge badge-ghost badge-md transition-transform hover:scale-110">
-                    #{skill}
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </p>
+      <TagDisplay 
+        tags={skills}
+        counts={tagCount}
+        showCounts={true}
+        maxDisplay={6}
+        modalId={modalId}
+        modalTitle="All Skills"
+        showHeader={false}
+      />
     </div>
   </div>
 </Card>
