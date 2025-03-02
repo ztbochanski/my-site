@@ -3,31 +3,22 @@ import Card from "./Card/index.astro";
 import { Icon } from "astro-icon/components";
 
 const logos = [
-  "simple-icons:rust",
-  "simple-icons:ruby",
-  "simple-icons:python",
-  "simple-icons:flask",
-  "simple-icons:pandas",
-  "simple-icons:streamlit",
-  "simple-icons:scikitlearn",
-  "simple-icons:plotly",
-  "simple-icons:linux",
-  "simple-icons:tensorflow",
-  "simple-icons:keras",
-  "simple-icons:pytorch",
-  "simple-icons:googlecolab",
-  "simple-icons:awslambda",
-  "simple-icons:amazons3",
-  "simple-icons:dart",
-  "simple-icons:flutter",
-  "simple-icons:firebase",
-  "simple-icons:postgresql",
-  "simple-icons:googlecloud",
-  "simple-icons:docker",
-  "simple-icons:git",
-  "simple-icons:intel",
-  "simple-icons:arduino",
-  "simple-icons:raspberrypi",
+  { icon: "simple-icons:rust", url: "https://www.rust-lang.org/" },
+  { icon: "simple-icons:nextdotjs", url: "https://nextjs.org/" },
+  { icon: "simple-icons:python", url: "https://www.python.org/" },
+  { icon: "simple-icons:pandas", url: "https://pandas.pydata.org/" },
+  { icon: "simple-icons:scikitlearn", url: "https://scikit-learn.org/" },
+  { icon: "simple-icons:linux", url: "https://www.linux.org/" },
+  { icon: "simple-icons:tensorflow", url: "https://www.tensorflow.org/" },
+  { icon: "simple-icons:googlecolab", url: "https://colab.research.google.com/" },
+  { icon: "simple-icons:amazonaws", url: "https://aws.amazon.com/" },
+  { icon: "simple-icons:dart", url: "https://dart.dev/" },
+  { icon: "simple-icons:flutter", url: "https://flutter.dev/" },
+  { icon: "simple-icons:postgresql", url: "https://www.postgresql.org/" },
+  { icon: "simple-icons:googlecloud", url: "https://cloud.google.com/" },
+  { icon: "simple-icons:docker", url: "https://www.docker.com/" },
+  { icon: "simple-icons:git", url: "https://git-scm.com/" },
+  { icon: "simple-icons:typescript", url: "https://www.typescriptlang.org/" },
 ];
 
 const getLabel = (str: string): string => {
@@ -46,21 +37,26 @@ const getLabel = (str: string): string => {
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
-  <div class="h-full">
-    <header class="flex items-center">
+  <div class="h-full flex flex-col">
+    <header class="flex items-center mb-4">
       <h1 class="text-xl font-semibold flex">
         Technical<Icon name="noto:mechanic" class="w-6 h-6 ml-2" />
       </h1>
     </header>
-    <div class="mt-2">
-      <ul class="flex flex-wrap gap-2">
+    <div class="flex-grow">
+      <ul class="flex flex-wrap gap-4 justify-between content-evenly min-h-full">
         {
           logos.map((logo) => (
-            <li
-              class="flex link tooltip transition-transform hover:text-info hover:scale-110"
-              data-tip={getLabel(logo)}
-            >
-              <Icon name={logo} class="w-8 h-8" />
+            <li class="flex items-center justify-center">
+              <a
+                href={logo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex link tooltip transition-transform hover:text-info hover:scale-110"
+                data-tip={getLabel(logo.icon)}
+              >
+                <Icon name={logo.icon} class="w-8 h-8" />
+              </a>
             </li>
           ))
         }
