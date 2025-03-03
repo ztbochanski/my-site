@@ -22,7 +22,10 @@ const {
 // If counts weren't provided, create an object with 1 for each tag
 const tagCounts: { [key: string]: number } = Object.keys(counts).length > 0 
   ? counts 
-  : tags.reduce((acc, tag) => ({ ...acc, [tag]: 1 }), {} as { [key: string]: number });
+  : tags.reduce((acc, tag) => {
+      acc[tag] = 1;
+      return acc;
+    }, {} as { [key: string]: number });
 
 // Get trending tags (most used first)
 const trendingTags = [...tags]
@@ -63,7 +66,13 @@ const trendingTags = [...tags]
 </div>
 
 <dialog id={modalId} class="modal">
-  <div class="modal-box">
+  <div class="modal-box relative">
+    <button 
+      class="btn btn-sm btn-circle absolute right-2 top-2"
+      onclick="this.closest('dialog').close()"
+    >
+      ×
+    </button>
     <h3 class="font-bold text-lg mb-4">{modalTitle}</h3>
     <div class="grid grid-cols-2 gap-2">
       {tags.map((tag) => (
@@ -85,4 +94,7 @@ const trendingTags = [...tags]
       </form>
     </div>
   </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
 </dialog> 
