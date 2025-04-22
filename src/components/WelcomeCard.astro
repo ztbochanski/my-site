@@ -97,7 +97,7 @@ const currentYear = new Date().getFullYear();
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
   }
 
-  .avatar-image:active {
+  .avatar-image.spin {
     animation: spin 0.75s ease-in-out;
   }
 
@@ -110,3 +110,13 @@ const currentYear = new Date().getFullYear();
     }
   }
 </style>
+
+<script>
+  const avatar = document.querySelector('.avatar-image');
+  if (avatar) {
+    avatar.addEventListener('click', () => {
+      avatar.classList.add('spin');
+      setTimeout(() => avatar.classList.remove('spin'), 750);
+    });
+  }
+</script>
